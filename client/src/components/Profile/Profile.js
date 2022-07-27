@@ -1,6 +1,6 @@
 //resolve graphql hooks grab all by userid
 import React from 'react';
-import './Projects.css';
+import './Profile.css';
 import uniqid from 'uniqid';
 import LikeIcon from '@material-ui/icons/Favorite'
 import CommentIcon from '@material-ui/icons/Comment'
