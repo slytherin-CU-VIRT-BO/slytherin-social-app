@@ -11,7 +11,7 @@ const ProfilePosts = (props) => {
     <section id='friends'>
       <ul className='friends-list'>
         {props.posts.map((firstName,lastName) => (
-            <li className='post' key={uniqid()}>
+            <li className='friend' key={uniqid()}>
                 <h3 className='friend-name'> <FriendIcon/> {firstName} {lastName}</h3>
             </li>
         ))}
