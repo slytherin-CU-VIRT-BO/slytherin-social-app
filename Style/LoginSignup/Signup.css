@@ -1,0 +1,166 @@
+* {box-sizing: border-box;}
+
+:root {
+    --accent: coral;
+    --primary: #fff;
+    --secondary: #f7f8fc;
+    --text-default: #000;
+    --text-primary: #555;
+    --text-secondary: #ccc;
+  }
+
+body {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  background: white;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+  
+.sign {
+  background: 
+    linear-gradient(
+      100deg, rgb(195, 252, 184), 
+      rgba(177, 177, 177, 0.4)
+    );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 37%);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1em 2em;
+  color: #fff;
+  width: 90%;
+  max-width: 33em;
+}
+
+.sign h1 {
+  text-align: left;
+  margin-bottom: 1.5em;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.sign p{
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-weight:lighter;
+  font-size:larger;
+  letter-spacing: 1px;
+}
+
+.input-group {
+  border: #ccc solid 2px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 2em 0;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  padding: 0.5em;
+  width: 100%;
+  color: #eee;
+  transition: 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #ccc;
+}
+
+.input-group div {
+  padding: 0 1em;
+  border-right: #ccc solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remember {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.check {
+  position: relative;
+  border: 1px #eee solid;
+  border-radius: 3em;
+  width: 3em;
+  height: 1.5em;
+  transition: 0.3s;
+}
+
+.thumb {
+  width: 1.3em;
+  height: 1.3em;
+  background: rgba(75, 75, 75, 0.4);
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+
+.check input {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.check input:checked + .thumb {
+  left: 1.5em;
+  
+}
+
+.sign button {
+  padding: 0.5em 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: #ccc solid 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  transition: 0.9s;
+}
+
+.sign button:hover, .check:hover {
+  background: rgba(0, 0, 0, 0.352);
+}
+
+.sign p {
+  text-align: center;
+  padding: 1em 0 0 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
