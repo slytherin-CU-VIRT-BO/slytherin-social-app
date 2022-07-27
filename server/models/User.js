@@ -3,16 +3,22 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
-    firstName: {
+    username: {
       type: String,
       required: true,
       unique: true,
       trim: true
     },
+    firstName: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: true
+    },
     lastName: {
         type: String,
-        required: true,
-        unique: true,
+        required: false,
+        unique: false,
         trim: true
     },
     email: {
