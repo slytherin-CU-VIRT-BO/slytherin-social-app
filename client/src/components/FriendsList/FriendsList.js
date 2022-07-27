@@ -1,17 +1,18 @@
 import React from 'react';
 import './ProfilePosts.css';
 import uniqid from 'uniqid';
+import FriendIcon from '@material-ui/icons/People'
  
 const ProfilePosts = (props) => {
   if (!props.friends.length) return null
 
   return (
     //need css for friends-list, post, count-icon, post-text
-    <section id='posts'>
+    <section id='friends'>
       <ul className='friends-list'>
         {props.posts.map((firstName,lastName) => (
             <li className='post' key={uniqid()}>
-                <h3 className='friend-name'>{firstName} {lastName}</h3>
+                <h3 className='friend-name'> <FriendIcon/> {firstName} {lastName}</h3>
             </li>
         ))}
       </ul>
