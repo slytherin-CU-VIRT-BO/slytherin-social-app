@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import NavBar from '../NavBar/NavBar'
 
-import Auth from '../utils/auth'
+import Auth from '../../utils/auth'
 
 export default function Header() {
     const logout = event => {
@@ -15,7 +16,7 @@ export default function Header() {
             <Link to="/">
               <h1>Slytherin Social</h1>
             </Link>
-    
+            <NavBar />
             <nav>
               {Auth.loggedIn() ? (
                 <>
