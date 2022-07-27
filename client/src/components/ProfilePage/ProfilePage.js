@@ -2,18 +2,11 @@ import React from 'react';
 import './ProfilePage.css';
 import ProfilePosts from '../ProfilePosts/ProfilePosts'
 import FriendsList from '../FriendsList/FriendsList'
-import { useQuery } from 'graphql-hooks'
- 
-//revise query for grab user by id with posts 
-const HOMEPAGE_QUERY = `query HomePage($limit: Int) {
-  users(limit: $limit) {
-    id
-    name
-  }
-}`
+import { useQuery } from "@apollo/client";
+import { GET_ME } from '../../utils/queries';
 
 const ProfilePage = () => {
-  const { loading, error, data } = useQuery(HOMEPAGE_QUERY, { variables: { limit: 10 } })
+  const { loading, error, data } = useQuery(GET_ME)
  
   if (loading) return 'Loading...'
   if (error) return 'Something Bad Happened'
