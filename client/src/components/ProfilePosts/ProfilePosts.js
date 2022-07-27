@@ -20,7 +20,6 @@ const ProfilePosts = (props) => {
                 <div className='count-icon'>
                     <CommentIcon /> {comments.length}
                 </div>
-                
             </li>
         ))}
       </ul>
