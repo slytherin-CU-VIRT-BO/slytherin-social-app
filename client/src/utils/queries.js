@@ -24,3 +24,16 @@ export const GET_ME  = gql`
         }
     }
 `;
+
+export const GET_POSTS = gql`
+    query posts($username: String) {
+        posts(username: $username) {
+            postText
+            createdAt
+            firstName
+            lastName
+            likes
+            comments
+        }
+    }
+`
