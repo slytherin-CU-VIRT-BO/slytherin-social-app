@@ -1,28 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --accent: coral;
-  --primary: #fff;
-  --secondary: #f7f8fc;
-  --text-default: #000;
-  --text-primary: #555;
-  --text-secondary: #ccc;
-}
-
-body {
-  margin: 0;
-  font-family: "Roboto Condensed", sans-serif;
-  background: white;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2em;
-}
-
 .sign {
   background: linear-gradient(
     100deg,
