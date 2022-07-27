@@ -100,6 +100,27 @@ const resolvers = {
           }
           
           throw new AuthenticationError('You need to be logged in!');
+        },
+        // Adds a User to another User's friends list. 
+        /* ### Potentially could be altered to turn into sending a friend
+        request instead, should that feature ever be fleshed out. ### */
+        addFriend: async(parent, { friendId }, context) => {
+          // Check the user is logged in
+          if(context.user) {
+            const updatedUser = await User.findOneAndUpdate(
+              { _id: context.user._id },
+              // Use addToSet instead of push because addToSet will not add duplicates
+              // ie. if there is some sort of error allowing a user to try to add someone they
+              // are already friends with, it will not add duplicate friends
+              { $addToSet: { friends: friendId } },
+              { new: true }
+              // Populate afterwards to return the new array of friends
+            ).populate('friends')
+
+            return updatedUser;
+          }
+          
+          throw new AuthenticationError('You need to be logged in!');
         }
       }
     }
