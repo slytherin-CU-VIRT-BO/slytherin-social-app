@@ -32,8 +32,6 @@ export const GET_POSTS = gql`
             createdAt
             firstName
             lastName
-            likes
-            comments
         }
     }
 `

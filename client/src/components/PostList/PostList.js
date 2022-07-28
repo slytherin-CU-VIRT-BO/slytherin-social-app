@@ -1,4 +1,5 @@
 import React from 'react'
+import './PostList.css'
 
 const PostList = ({ posts }) => {
     if (!posts.length) {

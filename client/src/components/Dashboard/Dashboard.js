@@ -7,6 +7,7 @@ import { GET_POSTS } from '../../utils/queries';
 export default function Dashboard() {
     const { loading, data } = useQuery(GET_POSTS)
     const posts = data?.posts || []
+    console.log(data);
 
   return (
     <><div className="wrapper">
