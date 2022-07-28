@@ -1,3 +1,62 @@
-#profile {
-    width: auto
-};
+:root {
+    --accent: rgb(195, 252, 184);
+    --primary: #fff;
+    --secondary: #f7f8fc;
+    --dark: #739e6d;
+    --text-default: #000;
+    --text-primary: #555;
+    --text-secondary: #ccc;
+  }
+  body {
+      
+      margin: 0;
+      font-family: "Roboto Condensed", sans-serif;
+      min-height: 100vh;
+      background: var(--secondary);
+      color: var(--text-default);
+      display: grid;
+      grid-template-columns: 16em auto;
+      transition: 0.3s ease-in-out;
+      
+    }
+  
+  .profile-page {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-name {
+    background-color: var(--dark);
+    color: var(--secondary);
+    padding: 2rem;
+    display: inline-block;
+    border-style: outset;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .post-container {
+    text-align: center;
+    grid-column: 1 / span 1;
+    margin-bottom: 2rem;
+  }
+  
+  .friends-container {
+    grid-column: 2 / span 2;
+    display: flex;
+    background: 
+      linear-gradient(
+        200deg, rgb(195, 252, 184), 
+        rgba(177, 177, 177, 0.4)
+      );
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
