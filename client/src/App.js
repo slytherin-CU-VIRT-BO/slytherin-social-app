@@ -46,7 +46,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/forgetpassword" element={<Signup />} />
+              <Route path="/forgetpassword" element={<ForgetPassword />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
