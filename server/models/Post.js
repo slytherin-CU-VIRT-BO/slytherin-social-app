@@ -24,7 +24,7 @@ const postSchema = new Schema(
         required: true
     },
     likes: {
-        type: Integer
+        type: Number
     },
     comments: [commentSchema]
   },

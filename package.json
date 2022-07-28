@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/slytherin-CU-VIRT-BO/slytherin-social-app#readme",
   "dependencies": {
+    "apollo-server-express": "^3.10.0",
+    "bcrypt": "^5.0.1",
     "concurrently": "^7.3.0"
   }
 }
