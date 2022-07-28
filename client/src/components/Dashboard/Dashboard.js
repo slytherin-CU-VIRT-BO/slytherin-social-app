@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
-import PostList from '../PostList';
+import PostList from '../PostList/PostList';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../utils/queries';
 
