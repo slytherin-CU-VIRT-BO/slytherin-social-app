@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PostList({ posts }) {
+const PostList = ({ posts }) => {
     if (!posts.length) {
         return <h3>No Posts Yet</h3>;
       }
@@ -19,3 +19,5 @@ export default function PostList({ posts }) {
       </div>
       );
     }
+
+    export default PostList;
