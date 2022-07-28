@@ -83,6 +83,9 @@ const Signup = (props) => {
         <p>
           Already a member? <Link to="/login">Sign In.</Link>
         </p>
+        <p>
+          Forgot Password? <Link to="/forgetpassword">Reset here!</Link>
+        </p>
       </form>
     </div>
   );

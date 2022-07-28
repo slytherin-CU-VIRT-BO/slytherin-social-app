@@ -75,6 +75,9 @@ const Login = (props) => {
         <p>
           Not a member? <Link to="/signup">Sign Up!</Link>
         </p>
+        <p>
+          Forgot Password? <Link to="/forgetpassword">Reset here!</Link>
+        </p>
       </form>
     </div>
   );

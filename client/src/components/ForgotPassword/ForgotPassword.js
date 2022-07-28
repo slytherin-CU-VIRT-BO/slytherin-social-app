@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
+import { UPDATE_USER } from "../../utils/mutations";
 import "./ForgotPassword.css";
 
 const ForgotPassword = (props) => {
@@ -8,8 +10,17 @@ const ForgotPassword = (props) => {
     password: "",
   });
 
+  const [updateUser] = useMutation(UPDATE_USER);
+
   const formSubmit = async (e) => {
     e.preventDefault();
+
+    await updateUser({
+      variables: {
+        username: formState.username,
+        password: formState.password,
+      },
+    });
   };
 
   const handleChange = (e) => {
