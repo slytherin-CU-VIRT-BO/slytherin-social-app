@@ -15,16 +15,12 @@ const postSchema = new Schema(
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
-    firstName: {
+    username: {
       type: String,
       required: true
     },
-    lastName: {
-        type: String,
-        required: true
-    },
     likes: {
-        type: Integer
+        type: Number
     },
     comments: [commentSchema]
   },
