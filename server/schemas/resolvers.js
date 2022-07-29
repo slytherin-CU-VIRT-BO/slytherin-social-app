@@ -140,6 +140,13 @@ const resolvers = {
           // Populate afterwards to return the new array of friends
         ).populate("friends");
 
+        // Update the friends' friends list to also reflect the friend request being accepted
+          const updatedFriend = await User.findOneAndUpdate(
+            { username: friendName },
+            { $addToSet: { friends: context.user._id }},
+            { new: true}
+          ).populate('friends');
+
         return updatedUser;
       }
 
@@ -153,8 +160,26 @@ const resolvers = {
         const updatedUser = await User.findOneAndUpdate(
           // Update using the id of the user being added
           { _id: friendId },
-          // This user being added will have a friend request added to them
+          // This user being added will have a friend request added to them. User addToSet to prevent duplicate requests
           { $addToSet: { friendRequests: context.user._id } },
+          { new: true }
+        ).populate('friendRequests');
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // The logged in user rejects a friend request
+    rejectFriendRequest: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        // Update the user receiving the friend request
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { 
+            friendRequests: friendId 
+          } },
           { new: true }
         ).populate('friendRequests');
 

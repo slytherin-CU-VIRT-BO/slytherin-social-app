@@ -52,6 +52,7 @@ const typeDefs = gql`
     addComment(postId: ID!, commentBody: String!): Post
     addFriend(friendId: ID!): User
     sendFriendRequest(friendId: ID!): User
+    rejectFriendRequest(friendId: ID!): User
   }
 `;
 
