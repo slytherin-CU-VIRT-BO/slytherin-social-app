@@ -187,6 +187,28 @@ const resolvers = {
       }
 
       throw new AuthenticationError("You need to be logged in!");
+    },
+    // The logged in user removes a friend 
+    removeFriend: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        // Update the user removing the friend
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { friends: friendId } },
+          { new: true }
+        ).populate('friends');
+          // Update the friend who was removed
+          const updatedFriend = await User.findOneAndUpdate(
+            { _id: friendId },
+            { $pull: { friends: context.user._id } },
+            { new: true }
+          ).populate('friends')
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
     }
   },
 };
