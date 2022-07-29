@@ -1,13 +1,270 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+:root {
+  --accent: rgb(195, 252, 184);
+  --primary: #213348;
+  --secondary: #0a131c;
+  --text-default: #fff;
+  --text-primary: #c1c1c1;
+  --text-secondary: #ccc;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+body {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  min-height: 100vh;
+  background: var(--secondary);
+  color: var(--text-default);
+  display: grid;
+  grid-template-columns: 16em auto;
+  transition: 0.3s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+small {
+  color: var(--text-secondary);
+}
+
+p {
+  color: var(--text-primary);
+  font-size: 0.9em;
+  line-height: 25px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 2em;
+  width: 16em;
+  overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+.sidebar ul:not(.help) {
+  margin: 2em 0 5em 0;
+}
+
+.sidebar ul i {
+  color: #8c91a6;
+  font-size: 1.5em;
+  margin-right: 0.5em;
+}
+
+.sidebar ul li {
+  margin: 0.5em 0;
+}
+
+.sidebar ul a {
+  padding: 0.7em;
+  border-radius: 10px;  
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.sidebar ul a:hover {
+  background: var(--accent);
+  color: var(--secondary);
+}
+
+.sidebar ul li:hover i {
+  color: var(--secondary);
+}
+
+.sidebar .help a:hover {
+  background: var(--primary);
+  color: var(--text-default);
+}
+
+.sidebar .help a:hover i {
+  color: var(--text-default);
+}
+
+main {
+  padding: 2em;
+}
+
+.panel {
+  background: var(--primary);
+  border-radius: 0.8em;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar, 
+.profile, 
+.profile div, 
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .input-wrap {
+  padding: 0 1em;
+}
+
+.navbar input {
+  border: none;
+  background: none;
+  margin-left: 0.5em;
+  padding: 1em 0;
+  color: var(--text-default);
+}
+
+.navbar input:focus {
+  outline: none;
+}
+
+.navbar input::placeholder {
+  color: var(--text-default);
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+.navbar .fas {
+  cursor: pointer;
+}
+
+.profile {
+  min-width: 15em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.profile img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.dash {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 1em;
+}
+
+.dash .panel {
+  padding: 1em;
+}
+
+.title {
+  margin: 1.3em 0 0.5em 0;
+}
+
+.overview, .user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.overview .panel {
+  display: flex;
+  align-items: center; 
+}
+
+.overview .icon {
+  background: var(--secondary);
+  color: var(--accent);
+  font-size: 1.3em;
+  margin-right: 1em;
+  width: 2.8em;
+  height: 2.8em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview h2 {
+  margin-bottom: 0.2em;
+}
+
+.user-info {
+  margin: 1em 0;
+}
+
+
+@media screen and (max-width: 1330px) {
+  .dash {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    grid-template-columns: 6em auto;
+  }
+  .overview {
+    grid-template-columns: 1fr;
+  }
+  .profile-card{
+    grid-column: 1 / span 1;
+    min-height: 20em;
+  }
+  .sidebar {
+    width: 6em;
+    padding: 1em;
+  }
+  .sidebar ul a {
+    justify-content: center;
+  }
+  .sidebar ul a i {
+    margin-right: 0;
+  }
+  .sidebar ul li span,
+  .brand  {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  html {
+    font-size: 14px;
+  }
+  .navbar, .navbar .menu {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+  }
 }

@@ -18,6 +18,7 @@ import ForgetPassword from "./components/ForgotPassword/ForgotPassword";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NewPost from "./components/NewPost/NewPost";
 import NoMatch from "./components/NoMatch/NoMatch";
+import PostList from "./components/PostList/PostList";
 
 const httpLink = createHttpLink({
   uri: "graphql",
@@ -43,7 +44,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <article>
           <Header />
           <div className="container">
             <Routes>
@@ -56,7 +57,7 @@ function App() {
             </Routes>
           </div>
           <Footer />
-        </div>
+        </article>
       </Router>
     </ApolloProvider>
   );
