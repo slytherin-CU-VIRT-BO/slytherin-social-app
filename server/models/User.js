@@ -43,6 +43,13 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'User'
       }
+    ],
+    friendRequests: [
+      // The string will be of the incoming user's username
+      {
+        type: String,
+        unique: true,
+      }
     ]
   },
   {
@@ -70,7 +77,11 @@ userSchema.pre('save', async function(next) {
   userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
   });
-  
+
+  userSchema.virtual('fullName').get(function() {
+    return `${this.firstName} ${this.lastName}`
+  })
+
   const User = model('User', userSchema);
   
   module.exports = User;

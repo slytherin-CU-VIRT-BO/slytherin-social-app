@@ -10,7 +10,8 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
           .populate("posts")
-          .populate("friends");
+          .populate("friends")
+          .populate("friendRequests");
 
         return userData;
       }
@@ -144,6 +145,24 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    // The logged in user sends a request to a user
+    sendFriendRequest: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        // Update the user receiving the friend request
+        const updatedUser = await User.findOneAndUpdate(
+          // Update using the id of the user being added
+          { _id: friendId },
+          // This user being added will have a friend request added to them
+          { $addToSet: { friendRequests: context.user._id } },
+          { new: true }
+        ).populate('friendRequests');
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    }
   },
 };
 

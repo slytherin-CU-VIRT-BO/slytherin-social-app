@@ -9,6 +9,7 @@ const typeDefs = gql`
     email: String
     friendCount: Int
     friends: [User]
+    friendRequests: String
     posts: [Post]
   }
 
@@ -50,6 +51,7 @@ const typeDefs = gql`
     addPost(postText: String!): Post
     addComment(postId: ID!, commentBody: String!): Post
     addFriend(friendId: ID!): User
+    sendFriendRequest(friendId: ID!): User
   }
 `;
 
