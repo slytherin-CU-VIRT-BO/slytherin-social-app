@@ -94,6 +94,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
+
           </div>
 
           <div className="activities">
