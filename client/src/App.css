@@ -92,6 +92,7 @@ p {
 }
 
 .sidebar ul a {
+  font-size: 1em;
   padding: 0.7em;
   border-radius: 10px;  
   width: 100%;
@@ -130,6 +131,7 @@ main {
 }
 
 .navbar, 
+header,
 .profile, 
 .profile div, 
 .menu {
@@ -137,15 +139,23 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-
+.navbar{
+  font-size:larger;
+  
+}
 .navbar .input-wrap {
   padding: 0 1em;
+  background: none;
+  display: flex;
 }
 
 .navbar input {
+  font-size:large;
+  display:flex;
   border: none;
   background: none;
   margin-left: 0.5em;
+  border-top:10em;
   padding: 1em 0;
   color: var(--text-default);
 }
@@ -160,10 +170,10 @@ main {
 
 .navbar ul li {
   display: inline-block;
-  margin: 0 0.5em;
+  margin: 0 3em;
 }
 
-.navbar .fas {
+.navbar .icon {
   cursor: pointer;
 }
 
@@ -192,7 +202,7 @@ main {
 }
 
 .title {
-  margin: 1.3em 0 0.5em 0;
+  margin:auto;
 }
 
 .overview, .user-info {
@@ -225,6 +235,9 @@ main {
 
 .user-info {
   margin: 1em 0;
+}
+.footer {
+  display:flex-end;
 }
 
 
@@ -266,6 +279,7 @@ main {
     font-size: 14px;
   }
   .navbar, .navbar .menu {
+    font-size: smaller;
     justify-content: center;
     align-items: center;
     flex-direction: column;

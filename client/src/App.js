@@ -20,6 +20,13 @@ import NewPost from "./components/NewPost/NewPost";
 import NoMatch from "./components/NoMatch/NoMatch";
 import PostList from "./components/PostList/PostList";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faSearch, faHome, faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faSearch, faHome, faPlus, faUser)
+
+
 const httpLink = createHttpLink({
   uri: "graphql",
 });
