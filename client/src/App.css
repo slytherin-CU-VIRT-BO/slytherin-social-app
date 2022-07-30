@@ -127,6 +127,8 @@ main {
 .panel {
   background: var(--primary);
   border-radius: 0.8em;
+  padding: 0.2em;
+  border: 0.5em;
   transition: 0.3s ease-in-out;
 }
 
@@ -196,9 +198,16 @@ header,
   grid-template-columns: 3fr 1fr;
   grid-gap: 1em;
 }
+.activities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
 
 .dash .panel {
   padding: 1em;
+  margin: 1em;
 }
 
 .title {
