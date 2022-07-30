@@ -47,7 +47,8 @@ const userSchema = new Schema(
     friendRequests: [
       // The string will be of the incoming user's username
       {
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'User'
       }
     ]
   },

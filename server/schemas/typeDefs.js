@@ -53,6 +53,7 @@ const typeDefs = gql`
     addFriend(friendId: ID!): User
     sendFriendRequest(friendId: ID!): User
     rejectFriendRequest(friendId: ID!): User
+    removeFriend(friendId: ID!): User
   }
 `;
 
