@@ -21,6 +21,10 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+h3 {
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
