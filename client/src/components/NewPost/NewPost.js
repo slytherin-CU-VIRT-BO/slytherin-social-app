@@ -3,19 +3,22 @@ import './NewPost.css';
 
 const NewPost = ({ onSubmit }) => {
 return (
-<form onSubmit={onSubmit}>
-    <label htmlFor="postText">Thoughts here:</label>
-    <input type="postText" id="postText"
-     placeholder="I'm feeling..." 
-    />
-    <label htmlFor="Link">Link here:</label>
-    <input type="Link" id="Link"
-     placeholder="Link" 
-    />
-    <input type="button" value="submit">
-      Create Post
-    </input>
-</form>
+<article className="newpost gradient-border">
+  <form onSubmit={submitHandler}>
+    <textarea placeholder="What are you slythering about?"/>
+    <div className="btns">
+      <label htmlFor="PostText">
+        <div>
+          < FaFile />
+        </div>
+      </label>
+      <input type="link"/>
+      <button type="submit" aria-label="submit">
+        < FaFaPhotoVideo />
+      </button>
+    </div>
+  </form>
+</article>
 );
 };
 

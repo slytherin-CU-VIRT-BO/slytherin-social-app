@@ -41,8 +41,10 @@ return (
                 <button>Edit Profile</button>
             </div>
             <div className="btn-group">
-                <button>Message</button>
-                <button>Add Friend</button>
+                <button>Message< FaPen /> 
+                </button>
+                <button>Add Friend< FaUserPlus/> 
+                </button>
             </div>
     </section>
 );
