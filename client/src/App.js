@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css';
+// import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -50,6 +50,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgetpassword" element={<ForgetPassword />} />
