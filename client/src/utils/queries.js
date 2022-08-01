@@ -26,6 +26,7 @@ export const GET_ME  = gql`
 `;
 
 export const GET_POSTS = gql`
+{    
     query posts($username: String) {
         posts(username: $username) {
             postText
@@ -34,4 +35,18 @@ export const GET_POSTS = gql`
             lastName
         }
     }
+}
+`
+
+export const GET_POST = gql`
+{
+    query post($id: ID!) {
+        post(_id: $id) {
+            postText
+            createdAt
+            firstName
+            lastName
+        }
+    }
+}
 `
