@@ -161,7 +161,7 @@ const resolvers = {
           // Update using the id of the user being added
           { _id: friendId },
           // This user being added will have a friend request added to them. User addToSet to prevent duplicate requests
-          { $addToSet: { friendRequests: context.user._id } },
+          { $addToSet: { friendRequests: context.user } },
           { new: true }
         ).populate('friendRequests');
 
