@@ -14,7 +14,7 @@
     background: var(--secondary);
     color: var(--text-default);
     display: grid;
-    grid-template-columns: 16em auto;
+    grid-template-columns:auto;
     transition: 0.3s ease-in-out;
     
   }
@@ -46,12 +46,18 @@
   
   .sidebar {
     position: fixed;
-    top: 0;
+    display: none;
+    max-width: 400px;
+    opacity: 0;
+    z-index: 999;
+    border-radius: 10px;
+    top: 100px;
+    bottom: 10px;
     left: 0;
-    height: 100%;
-    padding: 2em;
-    width: 16em;
-    overflow-y: scroll;
+    right: 1rem;
+    transform: translateX(-20%);
+    transition: all 0.2s linear;
+    pointer-events: none;
   }
   
   .sidebar::-webkit-scrollbar {
@@ -206,34 +212,4 @@
       display: none;
       position: absolute;
     }
-  
-    .dash {
-      width: 100vw;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 1em;
-    }
-   
-    .navbar .menu {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      height: 55px;
-      background-color: white;
-      display: flex;
-      justify-content: space-between;
-      overflow-x: 0;
-      
-    }
-  
-  
-  .navbar .menu i {
-    display: flex;
-    align-items: center;
-      flex-direction: column;
-    flex-grow: 1;
-    min-width: 50px;
-    overflow: hidden;
-    white-space: no-wrap;
-  }
   }

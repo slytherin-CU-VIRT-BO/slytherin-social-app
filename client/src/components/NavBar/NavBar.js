@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function NavBar() {
   return (
-    <><div className="wrapper">
+    <>
       <nav className="sidebar">
         <a href="#" className="brand">
           <h1>SlytherinSocial</h1>
@@ -79,8 +79,8 @@ export default function NavBar() {
           </li>
         </ul>
       </nav>
-    </div>
-    
+ 
+
    </>
   )
 }
