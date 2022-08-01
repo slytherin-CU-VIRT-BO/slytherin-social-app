@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaHome, FaPlus, FaUsers, FaUser } from 'react-icons/fa';
 
 export default function NavBar() {
   return (

@@ -1,5 +1,7 @@
+import { isConstValueNode } from 'graphql';
 import React from 'react';
 import './NewPost.css';
+import { FaPhotoVideo, FaFile} from 'react-icons/fa'
 
 const NewPost = ({ onSubmit }) => {
 return (
@@ -14,7 +16,7 @@ return (
       </label>
       <input type="link"/>
       <button type="submit" aria-label="submit">
-        < FaFaPhotoVideo />
+        < FaPhotoVideo />
       </button>
     </div>
   </form>

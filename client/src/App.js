@@ -18,6 +18,8 @@ import ForgetPassword from "./components/ForgotPassword/ForgotPassword";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NewPost from "./components/NewPost/NewPost";
 import NoMatch from "./components/NoMatch/NoMatch";
+import Trending from "./components/Trending/Trending";
+import ProfileCard from "./components/ProfileCard/ProfileCard";
 
 const httpLink = createHttpLink({
   uri: "graphql",

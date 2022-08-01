@@ -1,17 +1,19 @@
 import React from "react";
-import { FaClock, FaMapMarker, FaRegStar, FaCamera, FaMailBulk} from 'react-icons/fa';
+import { FaClock, FaMapMarker, FaRegStar, FaCamera, FaMailBulk } from 'react-icons/fa';
 import "./ProfileCard.css";
-import getDateString from "../../utils/getDateString";
 
-return (
+// IMPORT DATESTRING
+
+const ProfileCard = () => (
+    
     <section className="profilecard gradient-border">
         <header>
             <div>
                 <img src="https://source.unsplash.com/random/?city,night" alt="profile_image" className="profilecard__dp roundimage" />
-                
-                    <div className="dp-upload">
-                        < FaCamera />
-                    </div>
+
+                <div className="dp-upload">
+                    < FaCamera />
+                </div>
             </div>
             <h2 className='profile-name'></h2>
             <h1>{data.firstName} {data.lastName}</h1>
@@ -32,20 +34,20 @@ return (
                 <h3>Email</h3>
             </div>
             <div className="profinfo">
-                < FaRegStar/>
+                < FaRegStar />
                 <h3>I was born</h3>
             </div>
         </article>
-            <div className="btn-group">
-                <button>Logout</button>
-                <button>Edit Profile</button>
-            </div>
-            <div className="btn-group">
-                <button>Message< FaPen /> 
-                </button>
-                <button>Add Friend< FaUserPlus/> 
-                </button>
-            </div>
+        <div className="btn-group">
+            <button>Logout</button>
+            <button>Edit Profile</button>
+        </div>
+        <div className="btn-group">
+            <button>Message< FaPen />
+            </button>
+            <button>Add Friend< FaUserPlus />
+            </button>
+        </div>
     </section>
 );
 
