@@ -1,38 +1,74 @@
+import { FaBars } from 'react-icons/fa';
+import "./Header.css";
 import React from 'react'
 import { Link } from 'react-router-dom'
-import NavBar from '../NavBar/NavBar'
-
 import Auth from '../../utils/auth'
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink
+} from './HeaderElements';
+
 
 export default function Header() {
-    const logout = event => {
-        event.preventDefault()
-        Auth.logout()
-    }
+  const logout = event => {
+    event.preventDefault()
+    Auth.logout()
+  }
 
-    return (
-        <header>
-          <div>
-            <Link to="/">
-              <h1>Slytherin Social</h1>
-            </Link>
-            <NavBar />
-            <nav>
-              {Auth.loggedIn() ? (
-                <>
-                  <Link to="/profile">Me</Link>
-                  <a href="/" onClick={logout}>
-                    Logout
-                  </a>
-                </>
-              ) : (
-                <>
-                  <Link to="/login">Login</Link>
-                  <Link to="/signup">Signup</Link>
-                </>
-              )}
-            </nav>
-          </div>
-        </header>
-      );
-    }
+  return (
+    <header class="article">
+      {Auth.loggedIn() ? (
+        <>
+        <Nav>
+        <NavLink to='/'>
+          <h1>SlytherinSocial</h1>
+        </NavLink>
+        <Bars />
+        <NavLink to='/' activeStyle>
+            Home
+          </NavLink>
+        <NavMenu>
+          <NavLink to='/post' activeStyle>
+            Post
+          </NavLink>
+          <NavLink to='/profile' activeStyle>
+            Profile
+          </NavLink>
+          
+          <NavBtnLink to="/" onClick={logout} activeStyle>
+            Logout
+          </NavBtnLink>
+        </NavMenu>
+        
+      </Nav>
+        
+        </>
+      ) : (
+
+        <>
+          <Nav>
+        <NavLink to='/'>
+          <h1>SlytherinSocial</h1>
+        </NavLink>
+        <Bars />
+        <NavMenu>
+          <NavLink to='/' activestyle>
+            Home
+          </NavLink>
+          <NavLink to='/signup' activestyle>
+            Signup
+          </NavLink>
+          <NavBtnLink to='/login' activestyle>
+            Login
+          </NavBtnLink>
+        </NavMenu>
+      </Nav>
+          </>
+          )}
+    </header >
+  );
+}

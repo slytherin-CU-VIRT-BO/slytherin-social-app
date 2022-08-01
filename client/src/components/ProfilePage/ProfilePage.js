@@ -17,7 +17,6 @@ const ProfilePage = () => {
     <body>
       <div className="profile-page">
         <h2 className='profile-name'>Slytherin fellow {data.firstName} {data.lastName}</h2>
-        {/* {userParam && (<button className="addfriend" onClick={handleClick}>Add Friend</button>)} */}
       </div>
 
       <main className="profile-container">
