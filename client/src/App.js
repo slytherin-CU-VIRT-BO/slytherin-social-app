@@ -1,5 +1,4 @@
 import React from "react";
-// import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -18,8 +17,7 @@ import ForgetPassword from "./components/ForgotPassword/ForgotPassword";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NewPost from "./components/NewPost/NewPost";
 import NoMatch from "./components/NoMatch/NoMatch";
-import Trending from "./components/Trending/Trending";
-import ProfileCard from "./components/ProfileCard/ProfileCard";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 const httpLink = createHttpLink({
   uri: "graphql",
