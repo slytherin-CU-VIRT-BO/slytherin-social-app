@@ -28,7 +28,7 @@ export default function Dashboard() {
 				</main>
 			
 			<aside className="dashright userlist">
-				< FriendsList />
+				<Trending />
 			</aside>
 		</section>
           )}
