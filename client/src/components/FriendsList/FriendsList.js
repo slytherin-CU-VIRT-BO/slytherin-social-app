@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProfilePosts.css';
+// import './ProfilePosts.css';
 import uniqid from 'uniqid';
 import FriendIcon from '@material-ui/icons/People'
  

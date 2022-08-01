@@ -15,20 +15,23 @@ const ProfilePage = () => {
 
   return (
     <body>
-      <div className="profile-page">
-        <h2 className='profile-name'>Slytherin fellow {data.firstName} {data.lastName}</h2>
-      </div>
+      <h2 className='profile-name'>{data.firstName} {data.lastName}</h2>
 
-      <main className="profile-container">
+    <section className="dash">
+			<div className="dashleft">
+				<ProfileCard />
+			</div>
 
-        <div className="post-container">
-          <ProfilePosts posts={data.posts} />
-        </div>
-        <div className="friends-container">
-          <FriendsList friends={data.friends} />
-        </div>
-        
-      </main>
+				<main className="dashmiddle">
+          <NewPost />
+        <ProfilePosts posts={data.posts} />
+				</main>
+			
+			<aside className="dashright userlist">
+      <FriendsList friends={data.friends} />
+			</aside>
+      
+		</section>
     </body>
   )
 }

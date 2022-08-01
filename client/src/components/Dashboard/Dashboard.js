@@ -4,6 +4,8 @@ import PostList from '../PostList/PostList';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../utils/queries';
 import NavBar from '../NavBar/NavBar';
+import NewPost from '../NewPost/NewPost';
+import FriendsList from '../FriendsList/FriendsList';
 
 export default function Dashboard() {
     const { loading, data } = useQuery(GET_POSTS)
@@ -22,7 +24,6 @@ export default function Dashboard() {
 				<NavBar />
 			</div>
 				<main className="dashmiddle">
-					<NewPost />
 					<PostList posts={posts}/>
 				</main>
 			
