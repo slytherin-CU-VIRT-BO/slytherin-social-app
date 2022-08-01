@@ -1,4 +1,5 @@
-
+import ProfileCard from '../ProfileCard/ProfileCard';
+import NewPost from '../NewPost/NewPost';
 import React from 'react';
 import './ProfilePage.css';
 import ProfilePosts from '../ProfilePosts/ProfilePosts'

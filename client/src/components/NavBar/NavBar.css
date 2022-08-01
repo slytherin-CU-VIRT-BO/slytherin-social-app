@@ -169,19 +169,6 @@
     body {
       grid-template-columns: 6em auto;
     }
-    .overview,
-    .user-info,
-    .gallery {
-      grid-template-columns: 1fr;
-    }
-    .profile-card,
-    .chart-container {
-      grid-column: 1 / span 1;
-      min-height: 20em;
-    }
-    .chart-container #lineChart {
-      width: 100% !important;
-    }
     .sidebar {
       width: 6em;
       padding: 1em;
@@ -194,15 +181,7 @@
     }
     .sidebar ul li span,
     .brand {
-      display: none;
-    }
-    .activities{
-      display: none;
-    }
-    .fas fa-search {
-      display:inline-block;
-    }
-  }
+      display: none;}
   
   @media screen and (max-width: 628px) {
     html {
@@ -213,3 +192,4 @@
       position: absolute;
     }
   }
+}

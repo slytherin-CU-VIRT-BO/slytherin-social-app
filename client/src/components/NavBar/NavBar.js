@@ -12,7 +12,7 @@ export default function NavBar() {
         <ul>
           <li>
             <a href="#">
-              <i className="fa-solid fa-house"></i>
+              <FaHome />
               <span>Homepage</span>
             </a>
           </li>

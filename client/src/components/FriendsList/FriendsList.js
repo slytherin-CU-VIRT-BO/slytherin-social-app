@@ -1,5 +1,5 @@
 import React from 'react';
-// import './ProfilePosts.css';
+import './FriendsList.css';
 import uniqid from 'uniqid';
 import FriendIcon from '@material-ui/icons/People'
  
@@ -20,4 +20,4 @@ const ProfilePosts = (props) => {
   )
 }
 
-export default ProfilePosts
+export default FriendsList

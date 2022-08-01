@@ -10,6 +10,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 //import components/pages
+import FriendsList from "./components/FriendsList/FriendsList";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
@@ -20,6 +21,7 @@ import NewPost from "./components/NewPost/NewPost";
 import NoMatch from "./components/NoMatch/NoMatch";
 import Trending from "./components/Trending/Trending";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 const httpLink = createHttpLink({
   uri: "graphql",
