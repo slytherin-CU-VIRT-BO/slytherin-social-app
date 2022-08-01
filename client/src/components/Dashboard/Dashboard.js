@@ -3,6 +3,7 @@ import './Dashboard.css';
 import PostList from '../PostList/PostList';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../utils/queries';
+import NavBar from '../NavBar/NavBar';
 
 export default function Dashboard() {
     const { loading, data } = useQuery(GET_POSTS)
@@ -18,7 +19,7 @@ export default function Dashboard() {
           ) : (
             <section className="dash">
 			<div className="dashleft">
-				<ProfilePage />
+				<NavBar />
 			</div>
 				<main className="dashmiddle">
 					<NewPost />
