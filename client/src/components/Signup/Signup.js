@@ -36,7 +36,7 @@ const Signup = (props) => {
   };
 
   return (
-    <div className="sign">
+<div className="sign">
       <h1>SlytherinSocial</h1>
       <p>SignUp</p>
       <form onSubmit={formSubmit}>
@@ -88,6 +88,7 @@ const Signup = (props) => {
         </p>
       </form>
     </div>
+    
   );
 };
 

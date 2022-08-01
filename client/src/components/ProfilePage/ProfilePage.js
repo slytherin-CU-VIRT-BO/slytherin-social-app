@@ -1,5 +1,5 @@
 import React from 'react';
-// import './ProfilePage.css';
+import './ProfilePage.css';
 import ProfilePosts from '../ProfilePosts/ProfilePosts'
 import FriendsList from '../FriendsList/FriendsList'
 import { useQuery } from "@apollo/client";

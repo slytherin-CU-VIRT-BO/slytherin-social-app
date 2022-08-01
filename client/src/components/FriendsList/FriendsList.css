@@ -1,0 +1,36 @@
+
+.users {
+	height: 100%;
+	overflow: scroll;
+	background-color: var(--primary-500);
+	border-radius: 10px;
+	color: white;
+	scrollbar-width: none;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+    font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.users::-webkit-scrollbar {
+	display: none;
+}
+.users .friend-name {
+	position: relative;
+	display: flex;
+	color: white;
+	align-items: center;
+	gap: 1rem;
+	transition: transform 0.2s linear;
+}
+
+.users img {
+	width: 2rem;
+}
+
+.users .friend-name h3 {
+	font-weight: 500;
+	font-size: 0.8rem;
+}

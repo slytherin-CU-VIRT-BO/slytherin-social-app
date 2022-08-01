@@ -27,6 +27,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "apollo-server-express": "^3.10.0",
     "bcrypt": "^5.0.1",
-    "concurrently": "^7.3.0"
+    "concurrently": "^7.3.0",
+    "picomatch": "^2.3.1"
   }
 }

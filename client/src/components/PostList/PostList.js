@@ -6,18 +6,11 @@ export default function PostList({ posts }) {
   }
 
   return (
-    <div>
-          <h1 className="title">Posts</h1>
-          {posts &&
-            posts.map(post => (
-              <div key={post._id} className="post-header">
-                <p className="post-body">
-                  {post.postText}
-                </p>
-                <div>{post.createdAt}</div>
-              </div>
-            ))}
-        </div>
+    <div className="posts">
+			{posts.map(post => (
+				<Post post={post} key={post._id} />
+			))}
+		</div>
       
   );
 }

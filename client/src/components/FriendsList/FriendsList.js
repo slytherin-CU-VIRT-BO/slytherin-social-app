@@ -1,30 +1,28 @@
 import React from 'react';
-import './ProfilePosts.css';
-import uniqid from 'uniqid';
-import FriendIcon from '@material-ui/icons/People'
+import './FriendsList.css';
+// import uniqid from 'uniqid';
+// import FriendIcon from '@material-ui/icons/People'
 
 const ProfilePosts = (props) => {
   if (!props.friends.length) return null
 
   return (
-    <div class="dash">
-      <div class="stats">
-        <h1 class="title">Friends</h1>
-        <ul className='overview'>
-          {props.posts.map((firstName, lastName) => (
-            <li className='panel' key={uniqid()}>
-              <h3 className='friend-name'> <FriendIcon /> {firstName} {lastName}</h3>
-              <div>
-              <div class="icon">
-                <i class="fas fa-user"></i>
-              </div>
+    <div class="title">Friends
+      <ul className='users'>
+        {props.posts.map((username) => (
+          <li className='user' key={username.id}>
+            <h3 className='friend-name'> {username}</h3>
+            <div>
+              <img
+                src="https://source.unsplash.com/random/1000x1000/?profile,person"
+                className="roundimage"
+              />
             </div>
-            </li>
-          ))}
-        </ul>
+          </li>
+        ))}
+      </ul>
       </div>
-    </div>
-  )
+      )
 }
 
-export default ProfilePosts
+      export default ProfilePosts

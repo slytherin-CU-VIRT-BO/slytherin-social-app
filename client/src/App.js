@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css';
+import './index.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -10,15 +10,17 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 //import components/pages
+import Dashboard from "./components/Dashboard/Dashboard";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import ForgetPassword from "./components/ForgotPassword/ForgotPassword";
-import Dashboard from "./components/Dashboard/Dashboard";
 import NewPost from "./components/NewPost/NewPost";
 import NoMatch from "./components/NoMatch/NoMatch";
 import PostList from "./components/PostList/PostList";
+import Post from "./components/Post/Post";
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -51,8 +53,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <article>
+        <article class="article">
           <Header />
+          
           <div className="container">
             <Routes>
               <Route path="/" element={<Dashboard />} />
