@@ -1,10 +1,10 @@
 import React from "react";
-import { FaClock, FaMapMarker, FaRegStar, FaCamera, FaMailBulk } from 'react-icons/fa';
+import { FaClock, FaMapMarker, FaRegStar, FaCamera, FaUserPlus, FaPen, FaMailBulk } from 'react-icons/fa';
 import "./ProfileCard.css";
 
 // IMPORT DATESTRING
 
-const ProfileCard = () => (
+const ProfileCard = ({data}) => (
     
     <section className="profilecard gradient-border">
         <header>
@@ -15,22 +15,21 @@ const ProfileCard = () => (
                     < FaCamera />
                 </div>
             </div>
-            <h2 className='profile-name'></h2>
-            <h1>{data.firstName} {data.lastName}</h1>
+            <h1 className='profile-name'>{data.firstName} {data.lastName}</h1>
             <h2>@{data.username}</h2>
         </header>
 
         <article>
             <div className="profinfo">
                 < FaClock />
-                <h3>{createdAt}</h3>
+                <h3>{data.createdAt}</h3>
             </div>
             <div className="profinfo">
                 < FaMapMarker />
                 <h3>Located at</h3>
             </div>
             <div className="profinfo">
-                <img src={mailIcon} alt="mail" />
+                < FaMailBulk />
                 <h3>Email</h3>
             </div>
             <div className="profinfo">
