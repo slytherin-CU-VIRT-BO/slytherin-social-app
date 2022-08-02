@@ -30,6 +30,7 @@ export const GET_POSTS = gql`
         posts(username: $username) {
             postText
             createdAt
+            username
             firstName
             lastName
         }
