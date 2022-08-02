@@ -23,14 +23,16 @@ const resolvers = {
       return User.find()
         .select("-__v -password")
         .populate("posts")
-        .populate("friends");
+        .populate("friends")
+        .populate("friendRequests");
     },
     // Query to find a user based off their username
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
         .populate("friends")
-        .populate("posts");
+        .populate("posts")
+        .populate("friendRequests");
     },
     // Query to get the sorted posts from a user
     posts: async (parent, { username }) => {
@@ -166,7 +168,7 @@ const resolvers = {
           // Update using the id of the user being added
           { _id: friendId },
           // This user being added will have a friend request added to them. User addToSet to prevent duplicate requests
-          { $addToSet: { friendRequests: context.user } },
+          { $addToSet: { friendRequests: context.user._id } },
           { new: true }
         ).populate('friendRequests');
 
@@ -179,16 +181,11 @@ const resolvers = {
     rejectFriendRequest: async (parent, { friendId }, context) => {
       // Check the user is logged in
       if (context.user) {
-        // Store user of friend being rejected
-        const friendToAdd = await User.findOne(
-          { _id: friendId }
-        )
-
         // Update the user receiving the friend request
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { 
-            friendRequests: friendToAdd 
+            friendRequests: friendId 
           } },
           { new: true }
         ).populate('friendRequests');
