@@ -1,6 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Post } = require("../models");
-const { signToken } = require("../utils/auth");
+const { signToken, unsignToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -132,27 +132,40 @@ const resolvers = {
     addFriend: async (parent, { friendId }, context) => {
       // Check the user is logged in
       if (context.user) {
-        // Store the User we are adding to push into logged in User's friends
-        const friendToAdd = await User.findOne(
-          { _id: friendId }
-        )
-
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
           // Use addToSet instead of push because addToSet will not add duplicates
           // ie. if there is some sort of error allowing a user to try to add someone they
           // are already friends with, it will not add duplicate friends
-          { $addToSet: { friends: friendToAdd } },
+          { 
+            $addToSet: { 
+              friends: friendId 
+            }, 
+            $pull: { 
+              friendRequests: friendId 
+            } 
+          },
           { new: true }
           // Populate afterwards to return the new array of friends
-        ).populate("friends");
+        )
+        .populate("friends")
+        .populate("friendRequests");
 
         // Update the friends' friends list to also reflect the friend request being accepted
           const updatedFriend = await User.findOneAndUpdate(
             { _id: friendId },
-            { $addToSet: { friends: context.user }},
+            { 
+            $addToSet: { 
+              friends: context.user._id 
+            },
+            $pull: { 
+              friendRequests: context.user._id 
+            }
+          },
             { new: true}
-          ).populate('friends');
+          )
+          .populate('friends')
+          .populate("friendRequests");
 
         return updatedUser;
       }
@@ -199,20 +212,16 @@ const resolvers = {
     removeFriend: async (parent, { friendId }, context) => {
       // Check the user is logged in
       if (context.user) {
-        // Store user of friend being rejected
-        const friendToRemove = await User.findOne(
-          { _id: friendId }
-        )
         // Update the user removing the friend
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { friends: friendToRemove } },
+          { $pull: { friends: friendId } },
           { new: true }
         ).populate('friends');
           // Update the friend who was removed
           const updatedFriend = await User.findOneAndUpdate(
             { _id: friendId },
-            { $pull: { friends: context.user } },
+            { $pull: { friends: context.user._id } },
             { new: true }
           ).populate('friends')
 
