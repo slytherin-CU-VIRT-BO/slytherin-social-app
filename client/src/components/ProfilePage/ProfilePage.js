@@ -1,10 +1,8 @@
 import ProfileCard from '../ProfileCard/ProfileCard';
-import NewPost from '../NewPost/NewPost';
 import React from 'react';
 import './ProfilePage.css';
 import ProfilePosts from '../ProfilePosts/ProfilePosts';
 import FriendsList from '../FriendsList/FriendsList';
-import ProfileCard from '../ProfileCard/ProfileCard';
 import NewPost from '../NewPost/NewPost';
 import { useQuery } from "@apollo/client";
 import { GET_ME } from '../../utils/queries';
