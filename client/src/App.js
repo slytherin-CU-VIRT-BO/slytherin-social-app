@@ -7,6 +7,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import './index.css'
 
 //import components/pages
 import FriendsList from "./components/FriendsList/FriendsList";
@@ -59,8 +60,8 @@ function App() {
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>
-          <Footer />
         </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   );
