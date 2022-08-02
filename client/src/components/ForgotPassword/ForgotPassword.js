@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 import { UPDATE_USER } from "../../utils/mutations";
 import "./ForgotPassword.css";
 
-const ForgotPassword = (props) => {
+const ForgotPassword = () => {
   const [formState, setFormState] = useState({
     username: "",
     password: "",
   });
 
+  const [errorMessage, setErrorMessage] = useState("");
   const [updateUser] = useMutation(UPDATE_USER);
 
-  const formSubmit = async (e) => {
-    e.preventDefault();
+  const formSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    console.log(formState);
 
     await updateUser({
       variables: {
@@ -23,12 +27,15 @@ const ForgotPassword = (props) => {
     });
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    if (!event.target.value.length) {
+      setErrorMessage(`${event.target.name} is required.`);
+    } else {
+      setErrorMessage("");
+
+      const { name, value } = event.target;
+      setFormState({ ...formState, [name]: value });
+    }
   };
 
   return (
@@ -40,7 +47,11 @@ const ForgotPassword = (props) => {
           <div>
             <i className="fas fa-user"></i>
           </div>
-          <input placeholder="Username" onChange={handleChange} />
+          <input
+            placeholder="Username"
+            name="username"
+            onChange={handleChange}
+          />
         </div>
         <div className="input-group">
           <div>
@@ -48,10 +59,16 @@ const ForgotPassword = (props) => {
           </div>
           <input
             type="password"
+            name="password"
             placeholder="Password"
             onChange={handleChange}
           />
         </div>
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
         <button type="submit">RESET</button>
         <p>
           Not a member? <Link to="/signup">Sign Up!</Link>
