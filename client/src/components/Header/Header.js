@@ -31,7 +31,7 @@ export default function Header() {
               Home
             </NavLink>
             <NavMenu>
-              <NavLink to="/post" activestyle="false">
+              <NavLink to="/newpost" activestyle="true">
                 Post
               </NavLink>
               <NavLink to="/profile" activestyle="false">

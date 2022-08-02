@@ -1,8 +1,9 @@
-.image {
-	aspect-ratio: 1;
-	border-radius: 50%;
-	object-fit: cover;
-}
+img {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: 150px;
+  }
 
 .trend {
 	height: 100%;

@@ -35,7 +35,13 @@
      justify-content: center;
      text-align: center;
     }
-  
+  .image {
+    margin-left:10px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+
+  }
   .postcard {
     font-size: 14px;
     margin: 0 0 0px 0;
@@ -63,3 +69,4 @@
     font-size:14px;
 
   }
+
