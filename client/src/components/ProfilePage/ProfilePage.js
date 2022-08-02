@@ -23,7 +23,7 @@ const ProfilePage = () => {
 
     <section className="dash">
 			<div className="dashleft">
-				<ProfileCard />
+				<ProfileCard data = {data}/>
 			</div>
 
 				<main className="dashmiddle">
