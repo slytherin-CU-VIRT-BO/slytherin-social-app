@@ -190,6 +190,22 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    // The logged in user cancels the friend request they sent to a user
+    cancelFriendRequest: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        // Update the user who had a friend request
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: friendId },
+          { $pull: { friendRequests: context.user._id } },
+          { new: true }
+        ).populate('friendRequests');
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
     // The logged in user rejects a friend request
     rejectFriendRequest: async (parent, { friendId }, context) => {
       // Check the user is logged in
