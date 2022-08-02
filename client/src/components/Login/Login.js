@@ -10,10 +10,15 @@ const Login = (props) => {
     username: "",
     password: "",
   });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [login, { error }] = useMutation(LOGIN);
 
-  const formSubmit = async (e) => {
-    e.preventDefault();
+  const formSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
     try {
       const mutationResponse = await login({
         variables: {
@@ -28,12 +33,15 @@ const Login = (props) => {
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    if (!event.target.value.length) {
+      setErrorMessage(`${event.target.name} is required.`);
+    } else {
+      setErrorMessage("");
+
+      const { name, value } = event.target;
+      setFormState({ ...formState, [name]: value });
+    }
   };
 
   return (
@@ -45,7 +53,11 @@ const Login = (props) => {
           <div>
             <i className="fas fa-user"></i>
           </div>
-          <input placeholder="Username" onChange={handleChange} />
+          <input
+            placeholder="Username"
+            name="username"
+            onChange={handleChange}
+          />
         </div>
         <div className="input-group">
           <div>
@@ -53,6 +65,7 @@ const Login = (props) => {
           </div>
           <input
             type="password"
+            name="password"
             placeholder="Password"
             onChange={handleChange}
           />
@@ -71,6 +84,11 @@ const Login = (props) => {
             </p>
           </div>
         ) : null}
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
         <button type="submit">LOGIN</button>
         <p>
           Not a member? <Link to="/signup">Sign Up!</Link>

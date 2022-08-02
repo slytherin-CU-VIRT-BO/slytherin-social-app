@@ -1,9 +1,13 @@
+
 import React from 'react';
 import './ProfilePage.css';
-import ProfilePosts from '../ProfilePosts/ProfilePosts'
-import FriendsList from '../FriendsList/FriendsList'
+import ProfilePosts from '../ProfilePosts/ProfilePosts';
+import FriendsList from '../FriendsList/FriendsList';
+import ProfileCard from '../ProfileCard/ProfileCard';
+import NewPost from '../NewPost/NewPost';
 import { useQuery } from "@apollo/client";
 import { GET_ME } from '../../utils/queries';
+import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
   const { loading, error, data } = useQuery(GET_ME)
@@ -15,21 +19,23 @@ const ProfilePage = () => {
 
   return (
     <body>
-      <div className="profile-page">
-        <h2 className='profile-name'>Slytherin fellow {data.firstName} {data.lastName}</h2>
-        {/* {userParam && (<button className="addfriend" onClick={handleClick}>Add Friend</button>)} */}
-      </div>
+      <h2 className='profile-name'>{data.firstName} {data.lastName}</h2>
 
-      <main className="profile-container">
+    <section className="dash">
+			<div className="dashleft">
+				<ProfileCard data = {data}/>
+			</div>
 
-        <div className="post-container">
-          <ProfilePosts posts={data.posts} />
-        </div>
-        <div className="friends-container">
-          <FriendsList friends={data.friends} />
-        </div>
-        
-      </main>
+				<main className="dashmiddle">
+          <NewPost />
+        <ProfilePosts posts={data.posts} />
+				</main>
+			
+			<aside className="dashright userlist">
+      <FriendsList friends={data.friends} />
+			</aside>
+      
+		</section>
     </body>
   )
 }
