@@ -3,7 +3,7 @@ import './FriendsList.css';
 import uniqid from 'uniqid';
 import FriendIcon from '@material-ui/icons/People'
  
-const ProfilePosts = (props) => {
+const FriendsList = (props) => {
   if (!props.friends.length) return null;
 
   return (
