@@ -176,6 +176,13 @@ const resolvers = {
     sendFriendRequest: async (parent, { friendId }, context) => {
       // Check the user is logged in
       if (context.user) {
+        /* 
+          Ensure the user isn't attempting to add themself. This likely wouldn't even be possible thorugh the front end, 
+          but better to make it inaccessible.
+        */
+        if(context.user._id === friendId) {
+          return;
+        }
         // Update the user receiving the friend request
         const updatedUser = await User.findOneAndUpdate(
           // Update using the id of the user being added
