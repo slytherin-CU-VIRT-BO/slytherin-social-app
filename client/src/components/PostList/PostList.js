@@ -13,6 +13,7 @@ const PostList = ({ posts }) => {
         {posts &&
           posts.map((post, index) => (
             <div key={index} className="postcard">
+
               <div>{post.firstName} posted at {post.createdAt}</div>
               <p className="postcard-text">{post.postText}</p>
             </div>
