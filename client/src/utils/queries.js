@@ -1,25 +1,27 @@
 import { gql } from "@apollo/client";
 
 export const GET_ME  = gql`
-    {
-        me {
+    query me {
+         me {
+            username
             firstName
             lastName
             email
-            password
             posts {
                 postText
                 createdAt
-                likes
                 comments {
-                  commentBody
-                  username
-                  createdAt
+                commentBody
+                username
+                createdAt
                 }
             }
             friends {
                 firstName
                 lastName
+            }
+            friendRequests {
+                username
             }
         }
     }
@@ -36,3 +38,4 @@ export const GET_POSTS = gql`
         }
     }
 `
+
