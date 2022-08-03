@@ -3,12 +3,8 @@ import React from 'react';
 import './ProfilePage.css';
 import ProfilePosts from '../ProfilePosts/ProfilePosts';
 import FriendsList from '../FriendsList/FriendsList';
-import NewPost from '../NewPost/NewPost';
 import { useQuery } from "@apollo/client";
 import { GET_ME } from '../../utils/queries';
-import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
-
 const ProfilePage = () => {
   const { loading, error, data } = useQuery(GET_ME);
 
