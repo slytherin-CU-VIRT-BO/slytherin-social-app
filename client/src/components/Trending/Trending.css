@@ -43,6 +43,11 @@
 		font-size: large;
     cursor: pointer;
 	}
+ .trend2 :hover{
+      background: var(--secondary);
+      color:var(--accent);
+      transition: 0.5s;
+  }
   .trendimage {
     margin-left:10px;
       aspect-ratio: 1;
