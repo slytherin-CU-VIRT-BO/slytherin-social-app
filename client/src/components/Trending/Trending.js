@@ -15,19 +15,19 @@ const Trending = () => {
       <div className="trend">
             <div className="trend2">
               <h1 className="peep"><FaHatWizard/>Rizzo</h1>
-              <p className="trend-text2">Web Developer</p>
+              <p className="trend-text2">Data Scientist</p>
             </div>
       </div>
       <div className="trend">
             <div className="trend2">
               <h1 className="peep"><FaHatWizard/>Lizzo</h1>
-              <p className="trend-text2">Web Developer</p>
+              <p className="trend-text2">Flautist</p>
             </div>
       </div>
       <div className="trend">
             <div className="trend2">
               <h1 className="peep"><FaHatWizard/>Kermit</h1>
-              <p className="trend-text2">Web Developer</p>
+              <p className="trend-text2">Muppet</p>
             </div>
       </div>
       
@@ -36,16 +36,4 @@ const Trending = () => {
 };
 
 export default Trending;
-{/* <div>
-    <section class="online">
-      <h2>New to Syltherin</h2>
-      <div class="user">
-        <div>
-          <img src="https://source.unsplash.com/random/1000x1000/?profile,person"
-            class="image" />
-        </div>
-        <h3>Adarsh</h3>
-      </div>
-  </section>
-  </div > */}
 

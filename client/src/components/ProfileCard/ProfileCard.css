@@ -1,4 +1,4 @@
-.profilecard {
+.profilecard main{
 	background-color: var(--primary-500);
 	border-radius: 10px;
 	margin-top: 50px;
@@ -17,15 +17,11 @@
 	aspect-ratio: 1;
 	left: 50%;
 	top: 0;
-	transform: translate(-50%, -100%);
 }
 
-.profilecard__dp {
+.profileimg {
 	height: 100%;
 	border: 0.3rem solid var(--primary-400);
-}
-
-.dp-upload {
 	position: absolute;
 	width: 40px;
 	aspect-ratio: 1;
@@ -36,8 +32,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
-}
+	cursor: pointer;}
 
 .profilecard h1 {
 	margin-top: 30px;
@@ -69,12 +64,8 @@
 	font-size: 0.9rem;
 }
 
-.profilecard__info img {
+.profinfo img {
 	width: 20px;
-}
-
-.profilecard__info:first-child img {
-	transform: scale(0.8);
 }
 
 .profilecard button {

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ADD_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import "./Signup.css";
+import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 
 const Signup = (props) => {
   const [formState, setFormState] = useState({
@@ -56,7 +57,7 @@ const Signup = (props) => {
       <form onSubmit={formSubmit}>
         <div type="text" className="input-group">
           <div>
-            <i className="fas fa-user"></i>
+            < FaUser/>
           </div>
           <input
             placeholder="Username"
@@ -66,13 +67,13 @@ const Signup = (props) => {
         </div>
         <div type="email" className="input-group">
           <div>
-            <i className="fas fa-envelope"></i>
+            <FaEnvelope/>
           </div>
           <input placeholder="Email" name="email" onChange={handleChange} />
         </div>
         <div className="input-group">
           <div>
-            <i className="fas fa-key"></i>
+            <FaLock/>
           </div>
           <input
             type="password"
@@ -83,7 +84,7 @@ const Signup = (props) => {
         </div>
         <div className="input-group">
           <div>
-            <i className="fas fa-lock"></i>
+            <FaLock/>
           </div>
           <input
             type="password"

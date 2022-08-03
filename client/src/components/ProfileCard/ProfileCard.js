@@ -4,14 +4,13 @@ import "./ProfileCard.css";
 
 // IMPORT DATESTRING
 
-const ProfileCard = ({data}) => (
-    
-    <section className="profilecard gradient-border">
+const ProfileCard = ({ data }) => (
+
+    <section className="profilecard main">
         <header>
             <div>
-                <img src="https://source.unsplash.com/random/?city,night" alt="profile_image" className="profilecard__dp roundimage" />
-
-                <div className="dp-upload">
+                <img src="https://source.unsplash.com/random/?city,night" alt="pic" className="profileimg" />
+                <div className="edit">
                     < FaCamera />
                 </div>
             </div>
