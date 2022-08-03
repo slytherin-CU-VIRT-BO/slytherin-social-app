@@ -14,7 +14,7 @@
       overflow-y: scroll;
     }
     .card::-webkit-scrollbar {
-        width: 1px;
+        width: 1px; 
       }
       
       ::-webkit-scrollbar-track {
@@ -36,10 +36,14 @@
      text-align: center;
     }
   .image {
+    width: 5rem;
     margin-left:10px;
       aspect-ratio: 1;
       border-radius: 50%;
       object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      display:block;
 
   }
   .postcard {

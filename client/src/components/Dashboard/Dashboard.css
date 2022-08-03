@@ -3,7 +3,7 @@
 	height:90%;
 	margin-inline: auto;
 	display: grid;
-	grid-template-columns: auto 2fr 1fr;
+	grid-template-columns: auto 2fr 2fr;
 	gap: 1rem;
 	position: relative;
 	background-color:#1f1f25;
@@ -27,14 +27,17 @@
 }
 
 .dashright {
+	margin-left: 20px;
 	position: sticky;
+	width: 100%;
 	top: 7rem;
 	padding-block: 2px;
 	border-radius: 10px;
 	height: calc(100vh - 9rem);
+	align-items: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 700px) {
 	.dashright {
 		display: none;
 	}
