@@ -41,11 +41,6 @@ export const Bars = styled(FaBars)`
     color: #1f1f25;
     background: rgb(195, 252, 184);
 
-    // &:hover {
-    //     transition: all 0.2s ease-in-out;
-    //     background: rgb(195, 252, 184);
-    //     color: #010606;
-    //   }
 `;
 
 export const NavMenu = styled.div`
@@ -82,9 +77,4 @@ export const NavBtnLink = styled(Link)`
   margin-left: 24px;
 
 
-  // &:hover {
-  //   transition: all 0.2s ease-in-out;
-  //   background: #fff;
-  //   color: #010606;
-  // }
 `;
