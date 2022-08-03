@@ -41,6 +41,7 @@
     }
 	.peep{
 		font-size: large;
+    cursor: pointer;
 	}
   .trendimage {
     margin-left:10px;

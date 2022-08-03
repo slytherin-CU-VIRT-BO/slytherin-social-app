@@ -27,14 +27,14 @@ export default function Header() {
               <h1>SlytherinSocial</h1>
             </NavLink>
             <Bars />
-            <NavLink to="/" activestyle="false">
+            <NavLink to="/" activestyle="true">
               Home
             </NavLink>
             <NavMenu>
               <NavLink to="/newpost" activestyle="true">
                 Post
               </NavLink>
-              <NavLink to="/profile" activestyle="false">
+              <NavLink to="/profile" activestyle="true">
                 Profile
               </NavLink>
               <NavBtnLink to="/" onClick={logout} activestyle="false">

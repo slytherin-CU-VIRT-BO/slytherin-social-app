@@ -56,6 +56,10 @@ label div {
 	gap: 1rem;
 	width: max-content;
 	margin-left: auto;
+	
+}
+button {
+	cursor: pointer;
 }
 
 @media (max-width: 800px) {
