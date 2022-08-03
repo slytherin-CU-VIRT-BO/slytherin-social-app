@@ -1,9 +1,9 @@
-import React from "react";
-// import './ProfilePosts.css';
-import uniqid from "uniqid";
-import FriendIcon from "@material-ui/icons/People";
-
-const ProfilePosts = (props) => {
+import React from 'react';
+import './FriendsList.css';
+import uniqid from 'uniqid';
+import FriendIcon from '@material-ui/icons/People'
+ 
+const FriendsList = (props) => {
   if (!props.friends.length) return null;
 
   return (
@@ -23,4 +23,4 @@ const ProfilePosts = (props) => {
   );
 };
 
-export default ProfilePosts;
+export default FriendsList

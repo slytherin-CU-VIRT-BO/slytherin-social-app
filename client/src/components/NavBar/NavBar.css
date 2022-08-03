@@ -1,22 +1,18 @@
+
 :root {
-    --accent:rgb(195, 252, 184);
-    --primary: rgb(255, 255, 255);
-    --secondary: #dffae3;
-    --text-default: #000;
-    --text-primary: #555;
-    --text-secondary: #ccc;
+    --accent: rgb(195, 252, 184);
+    --primary: #1f1f25;
+    --secondary: #292a31;
+    --text--default: #3c3e44;
   }
+  
   body {
-    
     margin: 0;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     background: var(--secondary);
     color: var(--text-default);
-    display: grid;
-    grid-template-columns:auto;
     transition: 0.3s ease-in-out;
-    
   }
   
   * {
@@ -31,7 +27,11 @@
   
   a {
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--accent);
+  }
+
+  a h4 {
+    padding: 1;
   }
   
   small {
@@ -46,36 +46,15 @@
   
   .sidebar {
     position: fixed;
-    display: none;
-    max-width: 400px;
-    opacity: 0;
-    z-index: 999;
-    border-radius: 10px;
-    top: 100px;
-    bottom: 10px;
+    top: 3em;
     left: 0;
-    right: 1rem;
-    transform: translateX(-20%);
-    transition: all 0.2s linear;
-    pointer-events: none;
+    height: 10%;
+    padding: 2em;
+    width: 14em;
+    overflow-y:visible;
   }
   
-  .sidebar::-webkit-scrollbar {
-    width: 8px;
-  }
   
-  ::-webkit-scrollbar-track {
-    background: var(--secondary);
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-secondary);
-  }
   
   .sidebar ul:not(.help) {
     margin: 2em 0 5em 0;
@@ -93,95 +72,38 @@
   
   .sidebar ul a {
     padding: 0.7em;
-    border-radius: 10px;
+    border-radius: 10px;  
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     transition: 0.2s;
   }
-  
+  span {
+    margin-left:10px;
+  }
   .sidebar ul a:hover {
     background: var(--accent);
-    color: #fff;
+    color:var(--secondary);
   }
   
   .sidebar ul li:hover i {
     color: #fff;
   }
   
-  
-  main {
-    padding: 2em;
-  }
-  
-  
-  .navbar,
-  .profile,
-  .profile div,
-  .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar .input-wrap {
-    padding: 0 1em;
-    width: 50%;
-    border-radius: 1em;
-    flex: 3;
-  }
-  
-  .navbar input {
-    border: none;
+  .sidebar .help a:hover {
     background: none;
-    margin-left: 0.5em;
-    padding: 1em 0;
     color: var(--text-default);
   }
   
-  .navbar input:focus {
-    outline: none;
-  }
-  
-  .navbar input::placeholder {
+  .sidebar .help a:hover i {
     color: var(--text-default);
   }
-  
-  .navbar ul li {
-    display: inline-block;
-    margin: 0 0.5em;
-    margin-left: 2.5em;
-  }
-  
-  .navbar .fas {
-    cursor: pointer;
-  }
-
   
   @media screen and (max-width: 1330px) {
-    .dash {
-      grid-template-columns: 1fr;
-    }
   }
   
   @media screen and (max-width: 900px) {
-    body {
-      grid-template-columns: 6em auto;
-    }
-    .overview,
-    .user-info,
-    .gallery {
-      grid-template-columns: 1fr;
-    }
-    .profile-card,
-    .chart-container {
-      grid-column: 1 / span 1;
-      min-height: 20em;
-    }
-    .chart-container #lineChart {
-      width: 100% !important;
-    }
     .sidebar {
       width: 6em;
       padding: 1em;
@@ -193,23 +115,8 @@
       margin-right: 0;
     }
     .sidebar ul li span,
-    .brand {
+    .brand  {
       display: none;
-    }
-    .activities{
-      display: none;
-    }
-    .fas fa-search {
-      display:inline-block;
     }
   }
   
-  @media screen and (max-width: 628px) {
-    html {
-      font-size: 14px;
-    }
-    .wrapper{
-      display: none;
-      position: absolute;
-    }
-  }

@@ -46,8 +46,8 @@ const Login = (props) => {
 
   return (
     <div className="sign">
-      <h1>SlytherinSocial</h1>
-      <p>Login</p>
+      {/* <h1>SlytherinSocial</h1>
+      <p>Login</p> */}
       <form onSubmit={formSubmit}>
         <div type="text" className="input-group">
           <div>

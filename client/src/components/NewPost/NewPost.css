@@ -2,9 +2,18 @@
 	background-color: var(--primary-500);
 	padding: 2rem 1rem;
 	border-radius: 10px;
+	margin:auto;
+	width: 50%;
+	margin-top: 2px;
+	max-width: 500px;
+    height:90%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
 }
 
 .newpost textarea {
+	
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -20,7 +29,7 @@
 
 .newpost button,
 label div {
-	background-color: rgba(255, 255, 255, 0.158);
+	background-color: rgb(195, 252, 184);
 	width: 50px;
 	aspect-ratio: 1;
 	border-radius: 50%;
@@ -31,11 +40,10 @@ label div {
 
 label div img,
 .newpost button img {
+	font-size: 20px;
 	height: 20px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-45%, -50%);
+	left: 5%;
+	top: 5%;
 }
 
 label div {

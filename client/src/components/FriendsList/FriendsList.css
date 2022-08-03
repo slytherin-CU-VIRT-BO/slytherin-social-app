@@ -1,0 +1,37 @@
+.friends {
+	height: 100%;
+	overflow: scroll;
+	border-radius: 10px;
+	color: white;
+	scrollbar-width: none;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.friends-list {
+	position: relative;
+	display: flex;
+	color: white;
+	align-items: center;
+	gap: 1rem;
+	transition: transform 0.2s linear;
+}
+
+.li h3 {
+	font-weight: 500;
+	font-size: 0.8rem;
+}
+
+.friend {
+	display: flex;
+	gap: 0.5rem;
+	width: 100%;
+	overflow-x: auto;
+	flex-shrink: 0;
+	scrollbar-width: 0;
+}
+
+
+
