@@ -27,7 +27,7 @@ export default function Dashboard() {
                 <PostList posts={posts} />
               </main>
 
-              <aside className="dashright userlist">
+              <aside className="dashright">
                 <Trending />
               </aside>
             </section>

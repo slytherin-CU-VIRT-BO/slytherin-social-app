@@ -3,172 +3,81 @@
   --primary-400: #1f1f25;
   --primary-500: #292a31;
   --primary-600: #3c3e44;
-  }
-
-  .trend {
-    width: 200px;
-    height:80px;
-	background: var(--secondary);
-      display:flexbox;
-      flex-direction: column;
-      gap: 0.5rem;
-      overflow-y: scroll;
-	  margin-bottom: 1em;
-	  
-    }
-    .trend::-webkit-scrollbar {
-        width: 1px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: var(--primary-400);
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent);
-        border-radius: 2px;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--text-secondary);
-      }
-    .h32 {
-		font-size:medium;
-      color: whitesmoke;
-      text-shadow: var(--accent);
-     justify-content: center;
-     text-align: center;
-    }
-	.peep{
-		font-size: large;
-    cursor: pointer;
-	}
- .trend2 :hover{
-      background: var(--secondary);
-      color:var(--accent);
-      transition: 0.5s;
-  }
-  .trendimage {
-    margin-left:10px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      object-fit: cover;
-
-  }
-  .trend2 {
-    font-size: 14px;
-    margin: 0 0 0px 0;
-    border: 0.5em solid var(--dark);
-    border-radius: 1em;
-    background: var(--secondary);
-    height:5em;
-    color: whitesmoke;
-    margin-bottom: 0.2rem;
-    font-size: 12px;
-	padding: 1em 2em;
-  }
-  
-  .trend-text2{
-    color: whitesmoke;
-    font-size: 10px;
-    color: var(--secondary);
-    margin: 0;
-    background-color: var(--dark);
-    border-radius: 2px;
-	
-  }
-
-  .trend p {
-    color: whitesmoke;
-    font-size:14px;
-	margin-top:5px
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* img {
-	max-width:10px;
-	max-height: 10px;
-	border-radius: 50%;
 }
 
 .trend {
-	height: 100%;
-	overflow: scroll;
-	background-color: var(--primary-500);
-	border-radius: 10px;
-	color: white;
-	scrollbar-width: none;
-	padding: 2rem;
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
+  width: 200px;
+  height: 80px;
+  background: var(--secondary);
+  display: flexbox;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: scroll;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
 }
-
 .trend::-webkit-scrollbar {
-	display: none;
+  width: 1px;
 }
 
-.trend h2 {
-	font-size: 1.1rem;
-	font-weight: 500;
+::-webkit-scrollbar-track {
+  background: var(--primary-400);
 }
 
-.trend .user {
-	position: relative;
-	display: flex;
-	color: white;
-	align-items: center;
-	gap: 1rem;
-	transition: transform 0.2s linear;
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
 }
 
-.user:not(.online-users .user):hover {
-	transform: translateX(10px);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+.h32 {
+  font-size: medium;
+  color: whitesmoke;
+  text-shadow: var(--accent);
+  justify-content: center;
+  text-align: center;
+}
+.peep {
+  font-size: large;
+  cursor: pointer;
+}
+.trend2 :hover {
+  background: var(--secondary);
+  color: var(--accent);
+  transition: 0.5s;
+}
+.trendimage {
+  margin-left: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.trend2 {
+  font-size: 14px;
+  margin: 0 0 0px 0;
+  border: 0.5em solid var(--dark);
+  border-radius: 1em;
+  background: var(--secondary);
+  height: 5em;
+  color: whitesmoke;
+  margin-bottom: 0.2rem;
+  font-size: 12px;
+  padding: 1em 2em;
 }
 
-.online img {
-	width: 2rem;
+.trend-text2 {
+  color: whitesmoke;
+  font-size: 10px;
+  color: var(--secondary);
+  margin: 0;
+  background-color: var(--dark);
+  border-radius: 2px;
 }
 
-.online h3 {
-	font-weight: 500;
-	font-size: 0.8rem;
+.trend p {
+  color: whitesmoke;
+  font-size: 14px;
+  margin-top: 5px;
 }
-
-.online-users {
-	display: flex;
-	gap: 0.5rem;
-	width: 100%;
-	overflow-x: auto;
-	flex-shrink: 0;
-	scrollbar-width: 0;
-}
-
-.online-users::-webkit-scrollbar {
-	display: none;
-}
-
-.online-users > * {
-	flex-shrink: 0;
-} */

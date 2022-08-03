@@ -100,7 +100,10 @@
     color: var(--text-default);
   }
   
-  @media screen and (max-width: 1330px) {
+  @media screen and (max-width: 801px) {
+  .sidebar{
+    display: none;
+  }
   }
   
   @media screen and (max-width: 900px) {
