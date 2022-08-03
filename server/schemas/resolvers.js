@@ -187,12 +187,12 @@ const resolvers = {
         /*
           Ensure the user isn't attempting to add someone who they already have added. If it does, don't update anything.
         */
-        const checkUser = await User.find({ 
+        const checkFriends = await User.find({ 
           _id: context.user._id,
           friends: { $in: [friendId] }, 
         }).select("-__v -password");
         
-        if(checkUser.length !== 0) {
+        if(checkFriends.length !== 0) {
           return;
         }
 
