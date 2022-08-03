@@ -30,7 +30,7 @@ const ProfilePage = () => {
 
             <main className="dashmiddle">
               <NewPost />
-              <ProfilePosts posts={data.me.posts} />
+              {/* <ProfilePosts posts={data.me.posts} /> */}
             </main>
 
             <aside className="dashright userlist">

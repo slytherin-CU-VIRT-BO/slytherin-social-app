@@ -8,7 +8,7 @@
 }
 
 .dashleft {
-  width: clamp(500px, 20vw, 550px);
+  width: clamp(300px, 20vw, 250px);
   height: fit-content;
   position: sticky;
   top: 7rem;
