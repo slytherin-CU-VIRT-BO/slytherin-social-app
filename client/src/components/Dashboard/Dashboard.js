@@ -20,14 +20,14 @@ export default function Dashboard() {
             <div>Loading...</div>
           ) : (
             <section className="dash">
-              <div className="dashleft">
+              <div className="dashleftdash">
                 <NavBar />
               </div>
               <main className="dashmiddle">
                 <PostList posts={posts} />
               </main>
 
-              <aside className="dashright userlist">
+              <aside className="dashright">
                 <Trending />
               </aside>
             </section>

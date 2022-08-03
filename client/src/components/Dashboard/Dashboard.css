@@ -1,36 +1,45 @@
 .dash {
-	width: 100%;
+	width: 100vw;
+	height:90%;
 	margin-inline: auto;
 	display: grid;
-	grid-template-columns: auto 2fr 1fr;
+	grid-template-columns: auto 1fr 2fr;
 	gap: 1rem;
 	position: relative;
+	background-color:#1f1f25;
 }
 
-.dashleft {
-	width: clamp(300px, 20vw, 350px);
-	height: fit-content;
+.dashleftdash {
+	width: clamp(100px, 20vw, 350px);
+	height: 100%;
 	position: sticky;
 	top: 7rem;
 	z-index: 2;
+	background-color:#1f1f25;
+
 }
 
 .dashmiddle {
 	display: flex;
 	flex-direction: column;
+	max-width: 400px;
 	gap: 1rem;
 	padding: 2px;
 }
 
 .dashright {
+	margin-left: 20px;
 	position: sticky;
+	width: clamp(300px, 20vw, 350px);
 	top: 7rem;
 	padding-block: 2px;
-	border-radius: 10px;
+	border-radius: 15px;
 	height: calc(100vh - 9rem);
+	align-items: center;
+	
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 700px) {
 	.dashright {
 		display: none;
 	}

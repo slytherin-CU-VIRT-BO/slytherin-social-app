@@ -31,3 +31,12 @@ export const UPDATE_USER = gql`
     }
   }
 `;
+
+export const ADD_POST = gql`
+  mutation addPost($postText: String!) {
+    addPost(postText: $postText) {
+        username
+        _id
+    }
+  }
+`;

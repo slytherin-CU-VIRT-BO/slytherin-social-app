@@ -1,6 +1,7 @@
+const { MobileFriendlySharp } = require("@material-ui/icons");
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Post } = require("../models");
-const { signToken } = require("../utils/auth");
+const { signToken, unsignToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -10,7 +11,8 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
           .populate("posts")
-          .populate("friends");
+          .populate("friends")
+          .populate("friendRequests");
 
         return userData;
       }
@@ -22,14 +24,16 @@ const resolvers = {
       return User.find()
         .select("-__v -password")
         .populate("posts")
-        .populate("friends");
+        .populate("friends")
+        .populate("friendRequests");
     },
     // Query to find a user based off their username
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
         .populate("friends")
-        .populate("posts");
+        .populate("posts")
+        .populate("friendRequests");
     },
     // Query to get the sorted posts from a user
     posts: async (parent, { username }) => {
@@ -134,16 +138,134 @@ const resolvers = {
           // Use addToSet instead of push because addToSet will not add duplicates
           // ie. if there is some sort of error allowing a user to try to add someone they
           // are already friends with, it will not add duplicate friends
-          { $addToSet: { friends: friendId } },
+          { 
+            $addToSet: { 
+              friends: friendId 
+            }, 
+            $pull: { 
+              friendRequests: friendId 
+            } 
+          },
           { new: true }
           // Populate afterwards to return the new array of friends
-        ).populate("friends");
+        )
+        .populate("friends")
+        .populate("friendRequests");
+
+        // Update the friends' friends list to also reflect the friend request being accepted
+          const updatedFriend = await User.findOneAndUpdate(
+            { _id: friendId },
+            { 
+            $addToSet: { 
+              friends: context.user._id 
+            },
+            $pull: { 
+              friendRequests: context.user._id 
+            }
+          },
+            { new: true}
+          )
+          .populate('friends')
+          .populate("friendRequests");
 
         return updatedUser;
       }
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    // The logged in user sends a request to a user
+    sendFriendRequest: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        /* 
+          Ensure the user isn't attempting to add themself. This likely wouldn't even be possible thorugh the front end, 
+          but better to make it inaccessible.
+        */
+        if(context.user._id === friendId) {
+          return;
+        }
+        /*
+          Ensure the user isn't attempting to add someone who they already have added. If it does, don't update anything.
+        */
+        const checkUser = await User.find({ 
+          _id: context.user._id,
+          friends: { $in: [friendId] }, 
+        }).select("-__v -password");
+        
+        if(checkUser.length !== 0) {
+          return;
+        }
+
+        // Update the user receiving the friend request
+        const updatedUser = await User.findOneAndUpdate(
+          // Update using the id of the user being added
+          { _id: friendId },
+          // This user being added will have a friend request added to them. User addToSet to prevent duplicate requests
+          { $addToSet: { friendRequests: context.user._id } },
+          { new: true }
+        ).populate('friendRequests');
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // The logged in user cancels the friend request they sent to a user
+    cancelFriendRequest: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        // Update the user who had a friend request
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: friendId },
+          { $pull: { friendRequests: context.user._id } },
+          { new: true }
+        ).populate('friendRequests');
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // The logged in user rejects a friend request
+    rejectFriendRequest: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        // Update the user receiving the friend request
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { 
+            friendRequests: friendId 
+          } },
+          { new: true }
+        ).populate('friendRequests');
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // The logged in user removes a friend 
+    removeFriend: async (parent, { friendId }, context) => {
+      // Check the user is logged in
+      if (context.user) {
+        // Update the user removing the friend
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { friends: friendId } },
+          { new: true }
+        ).populate('friends');
+          // Update the friend who was removed
+          const updatedFriend = await User.findOneAndUpdate(
+            { _id: friendId },
+            { $pull: { friends: context.user._id } },
+            { new: true }
+          ).populate('friends')
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    }
   },
 };
 

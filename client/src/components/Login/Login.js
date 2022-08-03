@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { LOGIN } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import "./Login.css";
+import { FaUser, FaKey } from 'react-icons/fa';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({
@@ -46,12 +47,12 @@ const Login = (props) => {
 
   return (
     <div className="sign">
-      <h1>SlytherinSocial</h1>
-      <p>Login</p>
+      {/* <h1>SlytherinSocial</h1>
+      <p>Login</p> */}
       <form onSubmit={formSubmit}>
         <div type="text" className="input-group">
           <div>
-            <i className="fas fa-user"></i>
+            <FaUser/>
           </div>
           <input
             placeholder="Username"
@@ -61,7 +62,7 @@ const Login = (props) => {
         </div>
         <div className="input-group">
           <div>
-            <i className="fas fa-key"></i>
+            <FaKey/>
           </div>
           <input
             type="password"

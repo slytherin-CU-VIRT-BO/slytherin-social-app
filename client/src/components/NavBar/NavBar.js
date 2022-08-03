@@ -1,85 +1,59 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaHome, FaPlus, FaUsers, FaUser } from 'react-icons/fa';
-
+import { FaHome, FaChild, FaMusic, FaGamepad, FaUmbrella, FaRegPaperPlane, FaShorts, FaImages, FaVideo } from 'react-icons/fa';
+import './NavBar.css'
 export default function NavBar() {
   return (
     <>
-      <nav className="sidebar">
-        <a href="#" className="brand">
-          <h1>SlytherinSocial</h1>
-        </a>
+    <div className="wrapper">
+      <div className="sidebar">
         <ul>
           <li>
             <a href="#">
-              <i className="fa-solid fa-house"></i>
-              <span>Homepage</span>
+              <FaRegPaperPlane />
+              <h3>SlytherinPro</h3>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa-solid fa-signs-post"></i>
-              <span>Navigation</span>
+              <FaVideo />
+              <span>Shorts</span>
             </a>
           </li>
           <li>
-            <a href="#">
-              <i className="fa-solid fa-user-group"></i>
-              <span>Friends</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa-solid fa-camera-retro"></i>
-              <span>Camera</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa-solid fa-images"></i>
+          <a href="#">
+              <FaImages />
               <span>Images</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa-solid fa-sliders"></i>
-              <span>Settings</span>
+              <FaGamepad />
+              <span>Gaming</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa-solid fa-video"></i>
-              <span>Video</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa-solid fa-gamepad"></i>
-              <span>Games</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa-solid fa-music"></i>
+              <FaMusic />
               <span>Music</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa-solid fa-child-reaching"></i>
+              <FaChild />
               <span>Celebrations</span>
             </a>
           </li>
-        </ul>
-        <ul className="help">
           <li>
             <a href="#">
-              <i className="fa-solid fa-cloud-question"></i>
-              <span>FAQ's</span>
+              <FaUmbrella />
+              <span>Settings</span>
             </a>
           </li>
+
         </ul>
-      </nav>
+      </div>
+      </div>
  
 
    </>

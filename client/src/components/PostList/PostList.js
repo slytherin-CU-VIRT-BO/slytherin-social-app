@@ -8,13 +8,14 @@ const PostList = ({ posts }) => {
 
   return (
     <div>
-      <h3>Posts</h3>
+      <h3 className="h3">Posts</h3>
       <div className="card">
         {posts &&
           posts.map((post, index) => (
             <div key={index} className="postcard">
+
+              <div>{post.firstName} posted at {post.createdAt}</div>
               <p className="postcard-text">{post.postText}</p>
-              <div>{post.createdAt}</div>
             </div>
           ))}
       </div>

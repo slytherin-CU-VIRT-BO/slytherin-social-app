@@ -19,7 +19,7 @@ export default function Header() {
   };
 
   return (
-    <header className="article">
+    <header className="header">
       {Auth.loggedIn() ? (
         <>
           <Nav>
@@ -31,14 +31,13 @@ export default function Header() {
               Home
             </NavLink>
             <NavMenu>
-              <NavLink to="/post" activestyle="true">
+              <NavLink to="/newpost" activestyle="true">
                 Post
               </NavLink>
               <NavLink to="/profile" activestyle="true">
                 Profile
               </NavLink>
-
-              <NavBtnLink to="/" onClick={logout} activestyle="true">
+              <NavBtnLink to="/" onClick={logout} activestyle="false">
                 Logout
               </NavBtnLink>
             </NavMenu>
@@ -58,9 +57,9 @@ export default function Header() {
               <NavLink to="/signup" activestyle="true">
                 Signup
               </NavLink>
-              <NavBtnLink to="/login" activestyle="true">
+              <NavLink to="/login" activestyle="true">
                 Login
-              </NavBtnLink>
+              </NavLink>
             </NavMenu>
           </Nav>
         </>
