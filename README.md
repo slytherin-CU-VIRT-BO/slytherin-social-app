@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">SlytherinSocial</h1>
 
-# A social media platform built using MERN stack. ⭐
+# A social media platform built using MERN stack. 
 
 Currently at an MVP stage of development. Create an account, create and view posts, add friends.
 
@@ -22,7 +22,7 @@ https://slytherin-social.herokuapp.com/
 -  Heroku
 -  JSON Web Tokens
 
-## Some available Scripts 🧬
+## Some available Scripts ⭐
 
 In the root of the project directory, you can run:
 
