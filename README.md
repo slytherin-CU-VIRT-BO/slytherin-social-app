@@ -54,7 +54,6 @@ Open [http://localhost:3000](http://localhost:3000) to view the client in the br
 - #### `seeders` - Sample data in json format to faux-populate the database
 - #### `schemas` - Defines the structure and content of our data
 - #### `utils` - For token authorization and defining dates/times
-- #### `server.js` - Defines npm behaviors and packages for the client
 #### `package.json` - Defines npm behaviors like the scripts defined in the next section of the README
 #### `.gitignore` - Tells git which files to ignore
 #### `README` - This file!
