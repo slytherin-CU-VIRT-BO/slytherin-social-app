@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./client/images/MERN.png" alt="mern" width="100" />
+    <img src="./client/images/MERN.png" alt="mern" width="500" />
 </p>
 <h1 align="center">SlytherinSocial</h1>
 
