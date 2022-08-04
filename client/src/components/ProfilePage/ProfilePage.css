@@ -1,50 +1,50 @@
 .dash {
-	width: 100%;
-	margin-inline: auto;
-	display: grid;
-	grid-template-columns: auto 1fr 1fr;
-	gap: 1rem;
-	position: relative;
+  width: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 1rem;
+  position: relative;
 }
 
 .dashleft {
-	width: clamp(300px, 20vw, 350px);
-	height: fit-content;
-	position: sticky;
-	top: 7rem;
-	z-index: 2;
+  width: clamp(300px, 20vw, 250px);
+  height: fit-content;
+  position: sticky;
+  top: 7rem;
+  z-index: 2;
 }
 
 .dashmiddle {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	padding: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2px;
 }
 
 .dashright {
-	width: clamp(200px, 20vw, 200px);
-	position: sticky;
-	top: 7rem;
-	padding-block: 2px;
-	border-radius: 10px;
-	height: fit-content;
+  width: clamp(200px, 20vw, 200px);
+  position: sticky;
+  top: 7rem;
+  padding-block: 2px;
+  border-radius: 10px;
+  height: fit-content;
 }
 
 @media (max-width: 1200px) {
-	.dashright {
-		display: none;
-	}
-	.dash {
-		grid-template-columns: auto 1fr;
-	}
+  .dashright {
+    display: none;
+  }
+  .dash {
+    grid-template-columns: auto 1fr;
+  }
 }
 
 @media (max-width: 800px) {
-	.dashleft {
-		display: none;
-	}
-	.dash {
-		grid-template-columns: 1fr;
-	}
+  .dashleft {
+    display: none;
+  }
+  .dash {
+    grid-template-columns: 1fr;
+  }
 }
