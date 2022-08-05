@@ -28,14 +28,14 @@ const ProfilePage = () => {
               <ProfileCard data={data.me} />
             </div>
 
-            <main className="dashmiddle">
+            <main className="dashmiddleprofile">
               <NewPost />
               {/* <ProfilePosts posts={data.me.posts} /> */}
             </main>
 
-            <aside className="dashright userlist">
+            <div className="dashrightprofile">
               <FriendsList friends={data.me.friends} />
-            </aside>
+            </div>
           </section>
         </div>
       );
