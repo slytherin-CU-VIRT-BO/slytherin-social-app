@@ -1,19 +1,19 @@
 import React from "react";
 import {
-
   FaClock,
   FaMapMarker,
   FaRegStar,
   FaCamera,
-  FaUserPlus,
   FaPen,
   FaMailBulk,
 } from "react-icons/fa";
 import "./ProfileCard.css";
+import AddFriend from "../AddFriend/AddFriend";
 
 // IMPORT DATESTRING
 
 const ProfileCard = ({ data }) => {
+  
   return (
     <section className="profilecard main">
       <header>
@@ -23,9 +23,9 @@ const ProfileCard = ({ data }) => {
             alt="pic"
             className="profileimg"
           />
-          {/* <div className="edit">
+          <div className="edit">
             <FaCamera />
-          </div> */}
+          </div>
         </div>
         <h1 className="profile-name">
           {data.firstName} {data.lastName}
@@ -36,19 +36,19 @@ const ProfileCard = ({ data }) => {
       <article>
         <div className="profinfo">
           <FaClock />
-          <h3>User since {data.createdAt}</h3>
+          <h3>{data.createdAt}</h3>
         </div>
         <div className="profinfo">
           <FaMapMarker />
-          <h3>Location</h3>
+          <h3>Located at</h3>
         </div>
         <div className="profinfo">
           <FaMailBulk />
-          <h3>{data.email}</h3>
+          <h3>Email: {data.email}</h3>
         </div>
         <div className="profinfo">
           <FaRegStar />
-          <h3>Birthday</h3>
+          <h3>I was born</h3>
         </div>
       </article>
       <div className="btn-group">
@@ -60,10 +60,7 @@ const ProfileCard = ({ data }) => {
           Message
           <FaPen />
         </button>
-        <button>
-          Add Friend
-          <FaUserPlus />
-        </button>
+        <AddFriend />
       </div>
     </section>
   );

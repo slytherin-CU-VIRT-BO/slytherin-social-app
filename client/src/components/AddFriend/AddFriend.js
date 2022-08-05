@@ -1,18 +1,16 @@
 
-import {FaUserPlus} from "react-icons/fa";
+import {FaUserPlus,FaUserMinus,GiCancel} from "react-icons/fa";
 import React from "react";
 import "./AddFriend.css";
 
-// IMPORT DATESTRING
-
-const ProfileCard = ({ data }) => {
+const AddFriend = ({ data }) => {
   
   return (
-    <button onClick={addFriend}>
+    <button >
         Add Friend
         <FaUserPlus />
     </button>
   );
 };
 
-export default ProfileCard;
+export default AddFriend;
