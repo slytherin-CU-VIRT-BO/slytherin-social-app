@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./client/images/MERN.png" alt="mern" height="100" />
+    <img src="./client/images/MERN.png" alt="mern" width="300" />
 </p>
 <p align="center">
     <img src="./client/images/Logo.jpg" alt="mern" width="500" />
