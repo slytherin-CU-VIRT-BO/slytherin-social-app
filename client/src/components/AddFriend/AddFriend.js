@@ -1,6 +1,8 @@
 
 import {FaUserPlus,FaUserMinus,GiCancel} from "react-icons/fa";
-import React from "react";
+import React, { useState }  from "react";
+import { useQuery } from "@apollo/client";
+import {GET_ME} from "../../utils/queries";
 import "./AddFriend.css";
 
 function CancelFriendRequest(props) {
@@ -31,15 +33,22 @@ function SendFriendRequest(props) {
 };
 
 const AddFriend = ({ data }) => {
-    if(potato==data.potato) {
+    const {data} = useQuery(GET_ME);
+    const [FriendState, setFriendState] = useState(() => CheckFriendState(
+      if(data.friends.includes()) {
 
-    } else if(potato!=data.potato) {
-      return
+      } else if(potato!=data.potato) {
+        return
+  
+      } else {
+        return
+  
+      };
+    ));
+    const handleFriends = () => {
 
-    } else {
-      return
+    }
 
-    };
 };
 
 export default AddFriend;
