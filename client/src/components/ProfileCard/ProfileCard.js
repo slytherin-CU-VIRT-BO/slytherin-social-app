@@ -8,7 +8,7 @@ import {
   FaMailBulk,
 } from "react-icons/fa";
 import "./ProfileCard.css";
-import AddFriend from "../AddFriend/AddFriend";
+// import AddFriend from "../AddFriend/AddFriend";
 
 // IMPORT DATESTRING
 
@@ -60,7 +60,7 @@ const ProfileCard = ({ data }) => {
           Message
           <FaPen />
         </button>
-        <AddFriend />
+        {/* <AddFriend /> */}
       </div>
     </section>
   );

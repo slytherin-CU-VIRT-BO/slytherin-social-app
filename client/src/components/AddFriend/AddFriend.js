@@ -36,7 +36,7 @@ const AddFriend = ({ data }) => {
     const {data} = useQuery(GET_ME);
     const [FriendState, setFriendState] = useState(() => CheckFriendState(
       if(data.friends.includes()) {
-          
+
       } else if(potato!=data.potato) {
         return
   
