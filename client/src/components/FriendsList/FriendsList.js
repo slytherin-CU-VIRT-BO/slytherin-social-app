@@ -7,7 +7,11 @@ const FriendsList = (props) => {
   if (!props.friends.length) return null;
 
   return (
-    //need css for friends-list, post, count-icon, post-text
+    <>
+    <article className="hardcode">
+<p> The sonnet has all the things we are told poetry should have: music, memorability, scaffolding, an innate ability to tell a story. It is the vestments of Shakespeare, Petrarch, Yeats, Frost. In matters of desire or annihilation, the sonnet is both the question and the answer. </p>
+
+    </article>
     <section id="friends">
       <ul className="friends-list">
         {props.posts.map((firstName, lastName) => (
@@ -20,6 +24,7 @@ const FriendsList = (props) => {
         ))}
       </ul>
     </section>
+  </>
   );
 };
 

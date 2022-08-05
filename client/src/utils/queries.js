@@ -27,6 +27,33 @@ export const GET_ME  = gql`
     }
 `;
 
+export const GET_USER  = gql`
+    query user($username: String) {
+         user(username: $username) {
+            username
+            firstName
+            lastName
+            email
+            posts {
+                postText
+                createdAt
+                comments {
+                commentBody
+                username
+                createdAt
+                }
+            }
+            friends {
+                firstName
+                lastName
+            }
+            friendRequests {
+                username
+            }
+        }
+    }
+`;
+
 export const GET_POSTS = gql`
     query posts($username: String) {
         posts(username: $username) {
@@ -38,4 +65,3 @@ export const GET_POSTS = gql`
         }
     }
 `
-
