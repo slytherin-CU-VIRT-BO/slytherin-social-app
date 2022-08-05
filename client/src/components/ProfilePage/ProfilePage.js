@@ -64,14 +64,14 @@ const ProfilePage = (props) => {
               <ProfileCard data={testUser.user} />
             </div>
 
-            <main className="dashmiddle">
+            <main className="dashmiddleprofile">
               <NewPost />
               {/* <ProfilePosts posts={data.user.posts} /> */}
             </main>
 
-            <aside className="dashright userlist">
-              <FriendsList friends={testUser.user.friends} />
-            </aside>
+            <div className="dashrightprofile">
+              <FriendsList friends={testUser.me.friends} />
+            </div>
           </section>
         </div>
       );
