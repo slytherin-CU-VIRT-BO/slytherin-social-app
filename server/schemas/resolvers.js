@@ -20,7 +20,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     // Query to get all users
-    users: async () => {
+    users: async (parent, args, context) => {
       // If the user is logged in, return all except the user that's logged in
       if(context.user) {
         return User.find( { username: { $ne: context.user.username } } )
