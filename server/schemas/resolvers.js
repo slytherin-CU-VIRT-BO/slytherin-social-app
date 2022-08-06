@@ -21,6 +21,14 @@ const resolvers = {
     },
     // Query to get all users
     users: async () => {
+      // If the user is logged in, return all except the user that's logged in
+      if(context.user) {
+        return User.find( { username: { $ne: context.user.username } } )
+        .select("-__v -password")
+        .populate("posts")
+        .populate("friends")
+        .populate("friendRequests");
+      } 
       return User.find()
         .select("-__v -password")
         .populate("posts")
