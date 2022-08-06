@@ -82,6 +82,18 @@ export const GET_USERS  = gql`
 `;
 
 export const GET_POSTS = gql`
+    query posts {
+        posts {
+            postText
+            createdAt
+            username
+            firstName
+            lastName
+        }
+    }
+`
+
+export const GET_POST = gql`
     query posts($username: String!) {
         posts(username: $username) {
             postText
