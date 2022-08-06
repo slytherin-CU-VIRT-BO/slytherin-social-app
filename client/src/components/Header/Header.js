@@ -1,6 +1,6 @@
 import { FaBars } from "react-icons/fa";
 import "./Header.css";
-import React from "react";
+import React, { useState } from "react";
 
 import { useQuery } from "@apollo/client";
 import { GET_ME } from "../../utils/queries";
@@ -13,13 +13,19 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./HeaderElements";
+import NewPost from "../NewPost/NewPost";
 
 const Header = () => {
-  const { loading, error, data } = useQuery(GET_ME,{skip:!Auth.loggedIn()});
- 
+  const { loading, error, data } = useQuery(GET_ME, { skip: !Auth.loggedIn() });
+  const [showModal, setShowModal] = useState(false);
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   const renderPage = () => {
@@ -41,19 +47,18 @@ const Header = () => {
                   Home
                 </NavLink>
                 <NavMenu>
-                  <NavLink to="/newpost" activestyle="true">
-                    Post
-                  </NavLink>
-                  <NavLink 
+                  <NavLink
                     activestyle="true"
-                    to= "/profile"
-                    state= {{username: data.me.username}}>
+                    to="/profile"
+                    state={{ username: data.me.username }}
+                  >
                     Profile
                   </NavLink>
                   <NavBtnLink to="/" onClick={logout} activestyle="false">
                     Logout
                   </NavBtnLink>
                 </NavMenu>
+                <button onClick={() => toggleModal()}>Add New Post</button>
               </Nav>
             </>
           ) : (
@@ -82,8 +87,12 @@ const Header = () => {
     }
   };
 
-  return <div>{renderPage()}</div>;
+  return (
+    <div>
+      {renderPage()}
+      {showModal && <NewPost onClose={toggleModal} />}
+    </div>
+  );
 };
 
 export default Header;
-

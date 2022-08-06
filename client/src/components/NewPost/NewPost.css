@@ -1,69 +1,75 @@
+.newPostBackdrop {
+  background: rgba(0, 0, 0, 0.65);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  margin-top: 5rem;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
 .newpost {
-	background-color: var(--primary-500);
-	padding: 2rem 1rem;
-	border-radius: 10px;
-	margin:auto;
-	width: 100%;
-	margin-top: 2px;
-	max-width: 500px;
-    height:90%;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+  background-color: var(--primary-500);
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  margin: 50px auto;
+  width: 100%;
+  max-width: 500px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .newpost textarea {
-	
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 100%;
-	height: 100px;
-	resize: none;
-	color: white;
-	font-size: 1rem;
-	background-color: var(--primary-600);
-	border-radius: 10px;
-	padding: 1rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  color: white;
+  font-size: 1rem;
+  background-color: var(--primary-600);
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 .newpost button,
 label div {
-	background-color: rgb(195, 252, 184);
-	width: 50px;
-	aspect-ratio: 1;
-	border-radius: 50%;
-	position: relative;
+  background-color: rgb(195, 252, 184);
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
 }
-
-
 
 label div img,
 .newpost button img {
-	font-size: 20px;
-	height: 20px;
-	left: 5%;
-	top: 5%;
+  font-size: 20px;
+  height: 20px;
+  left: 5%;
+  top: 5%;
 }
 
 label div {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .btns {
-	margin-top: 1rem;
-	display: flex;
-	gap: 1rem;
-	width: max-content;
-	margin-left: auto;
-	
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  margin-left: auto;
 }
 button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
-	.newpost {
-		padding: 1rem;
-	}
+  .newpost {
+    padding: 1rem;
+  }
 }
