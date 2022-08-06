@@ -1,39 +1,42 @@
 import React from "react";
 import "./Trending.css";
 import { FaHatWizard } from 'react-icons/fa';
-
+import {GET_USERS} from '../../utils/queries'
+import { useQuery } from "@apollo/client";
+import   { Link } from "react-router-dom";
 const Trending = () => {
-  return (
-    <>
-      <h3 className="h32">People you may know</h3>
-      <div className="trend">
-            <div className="trend2">
-              <h1 className="peep"><FaHatWizard/>Gonzo</h1>
-              <p className="trend-text2">Web Developer</p>
-            </div>
-      </div>
-      <div className="trend">
-            <div className="trend2">
-              <h1 className="peep"><FaHatWizard/>Rizzo</h1>
-              <p className="trend-text2">Data Scientist</p>
-            </div>
-      </div>
-      <div className="trend">
-            <div className="trend2">
-              <h1 className="peep"><FaHatWizard/>Lizzo</h1>
-              <p className="trend-text2">Flautist</p>
-            </div>
-      </div>
-      <div className="trend">
-            <div className="trend2">
-              <h1 className="peep"><FaHatWizard/>Kermit</h1>
-              <p className="trend-text2">Muppet</p>
-            </div>
-      </div>
-      
-    </>
-  );
+  const { loading, error, data } = useQuery(GET_USERS);
+  
+  const renderPage = () => {
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      console.error(error);
+      return <div>Error!</div>;
+    }
+      return (
+        <div>
+        <h3 className="h32">People you may know</h3>
+          {data.users &&
+            data.users.map((user, index) => (
+              <div key={index} className="trend">
+                    <div  className="trend2">
+                      <Link 
+                        activestyle="true"
+                        to= "/profile"
+                        state= {{username: user.username}}>
+                      <h1 className="peep"><FaHatWizard/>{user.username}</h1>
+                      <p className="trend-text2">{user.firstName} {user.lastName}</p>
+                      </Link>
+                    </div>
+              </div>
+            ))}
+        </div>
+      );
+  };
+
+return <div>{renderPage()}</div>;
 };
 
 export default Trending;
-
