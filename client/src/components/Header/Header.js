@@ -47,8 +47,7 @@ const Header = () => {
                   <NavLink 
                     activestyle="true"
                     to= "/profile"
-                    state= {{username: data.me.username}}
-                    search= "potato">
+                    state= {{username: data.me.username}}>
                     Profile
                   </NavLink>
                   <NavBtnLink to="/" onClick={logout} activestyle="false">
