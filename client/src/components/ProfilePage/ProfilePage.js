@@ -1,7 +1,7 @@
 import ProfileCard from "../ProfileCard/ProfileCard";
 import React from "react";
 import "./ProfilePage.css";
-import ProfilePosts from "../ProfilePosts/ProfilePosts";
+import PostList from "../PostList/PostList";
 import FriendsList from "../FriendsList/FriendsList";
 import NewPost from "../NewPost/NewPost";
 import { useQuery } from "@apollo/client";
@@ -37,7 +37,7 @@ const ProfilePage = (props) => {
 
             <main className="dashmiddleprofile">
               <NewPost />
-              {/* <ProfilePosts posts={data.user.posts} /> */}
+              <PostList posts={data.user.posts} />
             </main>
 
             <div className="dashrightprofile">
