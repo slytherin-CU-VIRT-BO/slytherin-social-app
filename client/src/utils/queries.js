@@ -28,7 +28,7 @@ export const GET_ME  = gql`
 `;
 
 export const GET_USER  = gql`
-    query user($username: String) {
+    query user($username: String!) {
          user(username: $username) {
             username
             firstName
@@ -55,7 +55,7 @@ export const GET_USER  = gql`
 `;
 
 export const GET_POSTS = gql`
-    query posts($username: String) {
+    query posts($username: String!) {
         posts(username: $username) {
             postText
             createdAt
