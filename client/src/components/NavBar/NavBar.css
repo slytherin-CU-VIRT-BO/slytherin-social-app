@@ -46,12 +46,13 @@
   
   .sidebar {
     position: fixed;
-    top: 3em;
+    top: 1em;
     left: 0;
-    height: 10%;
-    padding: 2em;
+    height: 20%;
+    padding: 3em;
     width: 14em;
     overflow-y:visible;
+    font-size: 1.4em;
   }
   
   

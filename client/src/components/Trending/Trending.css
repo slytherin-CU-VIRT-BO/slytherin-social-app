@@ -6,8 +6,8 @@
 }
 
 .trend {
-  width: 200px;
-  height: 80px;
+  width: 250px;
+  height: 55px;
   background: var(--secondary);
   display: flexbox;
   flex-direction: column;
@@ -15,7 +15,35 @@
   overflow-y: scroll;
   margin-bottom: 1em;
   border-radius: 0.5em;
+  
 }
+.containerpymk{
+  gap: 0.5rem;
+  overflow-y: scroll;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  height:500px;
+  justify-content: center;
+  text-align: center;
+}
+.containerpymk::-webkit-scrollbar {
+  width: 1px; 
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-400);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
 .trend::-webkit-scrollbar {
   width: 1px;
 }
@@ -36,8 +64,9 @@
   font-size: medium;
   color: whitesmoke;
   text-shadow: var(--accent);
-  justify-content: center;
-  text-align: center;
+  margin-right: 80px;
+  font-size: larger;
+  
 }
 .peep {
   font-size: large;
@@ -47,6 +76,7 @@
   background: var(--secondary);
   color: var(--accent);
   transition: 0.5s;
+  text-decoration: none;
 }
 .trendimage {
   margin-left: 10px;
@@ -63,8 +93,9 @@
   height: 5em;
   color: whitesmoke;
   margin-bottom: 0.2rem;
-  font-size: 12px;
+  font-size: 10px;
   padding: 1em 2em;
+  
 }
 
 .trend-text2 {

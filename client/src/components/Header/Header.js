@@ -57,8 +57,12 @@ const Header = () => {
                   <NavBtnLink to="/" onClick={logout} activestyle="false">
                     Logout
                   </NavBtnLink>
+                  <NavBtnLink to="/newpost "onClick={() => toggleModal()} activestyle="false">
+                    Add New Post
+                  </NavBtnLink>
                 </NavMenu>
-                <button onClick={() => toggleModal()}>Add New Post</button>
+
+                {/* <button onClick={() => toggleModal()}>Add New Post</button> */}
               </Nav>
             </>
           ) : (
@@ -81,8 +85,9 @@ const Header = () => {
                 </NavMenu>
               </Nav>
             </>
-          )}
-        </header>
+          )
+          }
+        </header >
       );
     }
   };

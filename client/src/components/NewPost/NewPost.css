@@ -16,8 +16,8 @@
   margin: 50px auto;
   width: 100%;
   max-width: 500px;
-  height: 50%;
-  display: flex;
+  height: 250px;
+  display: flex-start;
   flex-direction: column;
   gap: 0.5rem;
 }

@@ -56,16 +56,17 @@ const NewPost = (props) => {
             <button>
               <FaPhotoVideo />
             </button>
-          </div>
-          {errorMessage && (
+            {errorMessage && (
             <div>
               <p className="error-text">{errorMessage}</p>
             </div>
           )}
-        </form>
-        <button type="button" onClick={onClose}>
+          <button type="button" onClick={onClose}>
           Close
         </button>
+          </div>
+          
+        </form>
       </article>
     </div>
   );

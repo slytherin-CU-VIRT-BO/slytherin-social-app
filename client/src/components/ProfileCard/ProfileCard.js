@@ -24,7 +24,7 @@ const ProfileCard = ({ data }) => {
             className="profileimg"
           />
           <div className="edit">
-            <FaCamera />
+            {/* <FaCamera /> */}
           </div>
         </div>
         <h1 className="profile-name">

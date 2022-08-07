@@ -60,13 +60,14 @@ export const NavBtn = styled.nav`
   margin-right: 24px;
   justify-content: flex-end;
   width: 100vw;
-
+  
   @media screen and (max-width: 500px) {
     display: none;
   }
 `;
 
 export const NavBtnLink = styled(Link)`
+color: #fff;
   border-radius: 4px;
   padding: 10px 22px;
   outline: none;
@@ -74,7 +75,8 @@ export const NavBtnLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin-left: 24px;
+  margin-left: -5px;
+  
 
 
 `;

@@ -3,7 +3,7 @@ import "./PostList.css";
 
 const PostList = ({ posts }) => {
   if (!posts.length) {
-    return <h3>No Posts Yet</h3>;
+    return <p>No Posts Yet</p>;
   }
 
   return (

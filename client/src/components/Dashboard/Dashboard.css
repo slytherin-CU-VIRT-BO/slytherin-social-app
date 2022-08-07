@@ -10,7 +10,7 @@
 }
 
 .dashleftdash {
-	width: clamp(100px, 20vw, 350px);
+	width: clamp(100px, 20vw, 250px);
 	height: 100%;
 	position: sticky;
 	top: 7rem;
@@ -22,7 +22,7 @@
 .dashmiddle {
 	display: flex;
 	flex-direction: column;
-	max-width: 400px;
+	max-width: 600px;
 	gap: 1rem;
 	padding: 2px;
 }

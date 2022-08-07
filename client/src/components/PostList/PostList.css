@@ -6,8 +6,8 @@
   }
 
   .card {
-    max-width: 500px;
-    height:90%;
+    max-width: 700px;
+    height:500px;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -53,10 +53,10 @@
     border: 0.5em solid var(--dark);
     border-radius: 1em;
     background: var(--secondary);
-    height:5em;
+    height:6em;
     color: whitesmoke;
     margin-bottom: 0.2rem;
-    font-size: 12px;
+    font-size: larger;
   }
   
   .postcard-text {
