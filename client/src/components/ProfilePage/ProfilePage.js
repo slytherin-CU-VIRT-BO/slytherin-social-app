@@ -36,7 +36,7 @@ const ProfilePage = (props) => {
             </div>
 
             <main className="dashmiddleprofile">
-              {/* <NewPost /> */}
+              <NewPost />
               <PostList posts={data.user.posts} />
             </main>
 
