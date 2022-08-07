@@ -3,7 +3,6 @@ import React from "react";
 import "./ProfilePage.css";
 import PostList from "../PostList/PostList";
 import FriendsList from "../FriendsList/FriendsList";
-import NewPost from "../NewPost/NewPost";
 import { useQuery } from "@apollo/client";
 import { GET_USER } from "../../utils/queries";
 import { useLocation } from "react-router-dom";
