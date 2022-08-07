@@ -1,43 +1,77 @@
 :root {
-    --accent:rgb(195, 252, 184);
-    --primary: #fff;
-    --secondary: #f7f8fc;
-    --dark: #739e6d;
-    --text-default: #000;
-    --text-primary: #555;
-    --text-secondary: #ccc;
+  --accent: rgb(195, 252, 184);
+  --primary-400: #1f1f25;
+  --primary-500: #292a31;
+  --primary-600: #3c3e44;
   }
-  card {
-    
-    margin: 0;
-    font-family: "Roboto Condensed", sans-serif;
-    min-height: 100vh;
-    background: var(--secondary);
-    color: var(--text-default);
-    display: grid;
-    grid-template-columns: 1fr;
-    transition: 0.3s ease-in-out;
-    
+
+  .card {
+    max-width: 500px;
+    height:90%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow-y: scroll;
+      padding: 1em;
+    }
+    .card::-webkit-scrollbar {
+        width: 1px; 
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: var(--primary-400);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 2px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-secondary);
+      }
+    .h3 {
+      color: whitesmoke;
+      text-shadow: var(--accent);
+     justify-content: center;
+     text-align: center;
+    }
+  .image {
+    width: 5rem;
+    margin-left:10px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      display:block;
+
   }
-  
   .postcard {
-    margin: 0 0 30px 0;
-    border: 1px solid var(--dark);
-    border-radius: 10px;
-    background: 
-    linear-gradient(
-      50deg, rgb(195, 252, 184), 
-      rgba(177, 177, 177, 0.4)
-    );
-    color: var(--dark);
-    margin-bottom: 2rem;
+    font-size: 14px;
+    margin: 0 0 0px 0;
+    border: 0.5em solid var(--dark);
+    border-radius: 1em;
+    background: var(--secondary);
+    height:5em;
+    color: whitesmoke;
+    margin-bottom: 0.2rem;
+    font-size: 12px;
   }
   
   .postcard-text {
-    font-size: 1.7rem;
+    color: whitesmoke;
+    font-size: 10px;
     color: var(--secondary);
     margin: 0;
     background-color: var(--dark);
     padding: 1em 2em;
     border-radius: 12px;
   }
+
+  .postcard p {
+    color: whitesmoke;
+    font-size:14px;
+
+  }
+

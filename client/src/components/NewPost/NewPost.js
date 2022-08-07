@@ -1,21 +1,63 @@
-import React from 'react';
+import { useMutation } from "@apollo/client";
+import React, { useState } from "react";
 import './NewPost.css';
+import { FaPhotoVideo, FaRegPaperPlane} from 'react-icons/fa';
+import { ADD_POST } from "../../utils/mutations";
 
-const NewPost = ({ onSubmit }) => {
+const NewPost = () => {
+    const [formState, setFormState] = useState({
+      postText: ""
+    });
+    
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const [addPost] = useMutation(ADD_POST);
+   
+    const formSubmit = async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      addPost({
+          variables: {
+            postText: formState.postText
+          },
+        });
+      };
+
+      const handleChange = (event) => {
+        if (!event.target.value.length) {
+          setErrorMessage(`${event.target.name} is required.`);
+        } else {
+          setErrorMessage("");
+    
+          const { name, value } = event.target;
+          setFormState({ ...formState, [name]: value });
+        }
+      };
+
 return (
-<form onSubmit={onSubmit}>
-    <label htmlFor="postText">Thoughts here:</label>
-    <input type="postText" id="postText"
-     placeholder="I'm feeling..." 
+<article className="newpost gradient-border">
+  <form onSubmit={formSubmit}>
+    <textarea 
+        placeholder="What are you slythering about?"
+        name='postText'
+        onChange={handleChange}
     />
-    <label htmlFor="Link">Link here:</label>
-    <input type="Link" id="Link"
-     placeholder="Link" 
-    />
-    <input type="button" value="submit">
-      Create Post
-    </input>
-</form>
+    <div className="btns">
+      <label htmlFor="PostText">
+      </label>
+      <button type="submit"><FaRegPaperPlane/></button>
+      <button>
+        < FaPhotoVideo />
+      </button>
+    </div>
+    {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
+  </form>
+</article>
 );
 };
 

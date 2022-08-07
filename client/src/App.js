@@ -1,5 +1,4 @@
 import React from "react";
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -8,8 +7,10 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import './index.css'
 
 //import components/pages
+import FriendsList from "./components/FriendsList/FriendsList";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
@@ -18,6 +19,9 @@ import ForgetPassword from "./components/ForgotPassword/ForgotPassword";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NewPost from "./components/NewPost/NewPost";
 import NoMatch from "./components/NoMatch/NoMatch";
+import Trending from "./components/Trending/Trending";
+import ProfileCard from "./components/ProfileCard/ProfileCard";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 const httpLink = createHttpLink({
   uri: "graphql",
@@ -48,6 +52,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgetpassword" element={<ForgetPassword />} />
@@ -55,8 +60,8 @@ function App() {
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>
-          <Footer />
         </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   );

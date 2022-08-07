@@ -1,0 +1,32 @@
+
+  * {
+    font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-size-adjust: 100%;
+  }
+ 
+  nav {
+    font-size: calc(1rem - 1px);
+  font-family: 'Roboto Condensed',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: color .5s ease-in,background .5s ease-in,background-color .5s ease-in;
+  -webkit-tap-highlight-color: transparent;
+  position: sticky;
+  height: 7rem;
+  top: 0;
+  z-index: 2;
+  background-color: var(--primary-400);
+  display: flex;
+  align-items: center;
+  grid-gap: .5rem;
+  gap: .5rem;
+  }
+
+  h1 {background: rgb(195, 252, 184); padding:0.3em;border-radius:3em;
+  color: #1f1f25}

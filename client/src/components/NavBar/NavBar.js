@@ -1,39 +1,61 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { FaHome, FaChild, FaMusic, FaGamepad, FaUmbrella, FaRegPaperPlane, FaShorts, FaImages, FaVideo } from 'react-icons/fa';
+import './NavBar.css'
 export default function NavBar() {
   return (
     <>
-    <main>
-        <nav className="navbar">
-          <div className="input-wrap panel">
-            <i className="fas fa-search"></i>
-            <input type="search" placeholder="Have a search" />
-          </div>
-          <div className="menu">
-            <ul>
-              <li>
-                <i className="fas fa-user">
-                  <Link to="/profile"></Link>
-                </i>
-              </li>
-              <li>
-                <i className="fas fa-home">
-                  <Link to="/"></Link>
-                </i>
-              </li>
-              <li>
-                <i className="fas fa-bell"></i>
-              </li>
-              <li>
-                <i className="fas fa-plus">
-                  <Link to="/post"></Link>
-                </i>
+    <div className="wrapper">
+      <div className="sidebar">
+        <ul>
+          <li>
+            <a href="#">
+              <FaRegPaperPlane />
+              <h3>SlytherinPro</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <FaVideo />
+              <span>Shorts</span>
+            </a>
+          </li>
+          <li>
+          <a href="#">
+              <FaImages />
+              <span>Images</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <FaGamepad />
+              <span>Gaming</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <FaMusic />
+              <span>Music</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <FaChild />
+              <span>Celebrations</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <FaUmbrella />
+              <span>Settings</span>
+            </a>
+          </li>
 
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </main></>
+        </ul>
+      </div>
+      </div>
+ 
+
+   </>
   )
 }

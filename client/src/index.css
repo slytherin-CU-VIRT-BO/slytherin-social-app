@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400&subset=latin,latin-ext);
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +13,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+
+
+.container {
+	max-width: 1700px;
+	min-height: 100vh;
+	padding-inline: 2rem;
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 2rem;
+  background-color:#1f1f25;
+text-align: center;
 }

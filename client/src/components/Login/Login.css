@@ -1,17 +1,16 @@
+
 .sign {
-  background: linear-gradient(
-    100deg,
-    rgb(195, 252, 184),
-    rgba(177, 177, 177, 0.4)
-  );
+
+  background: none;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 37%);
   backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 1em 2em;
   color: #fff;
-  width: 90%;
-  max-width: 33em;
+  margin:auto;
+  
+
 }
 
 .sign h1 {

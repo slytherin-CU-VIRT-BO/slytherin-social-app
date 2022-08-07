@@ -4,70 +4,91 @@ import { Link } from "react-router-dom";
 import { ADD_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import "./Signup.css";
+import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 
 const Signup = (props) => {
   const [formState, setFormState] = useState({
     username: "",
     email: "",
     password: "",
+    password_confirm: "",
   });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [addUser] = useMutation(ADD_USER);
 
-  const formSubmit = async (e) => {
-    e.preventDefault();
+  const formSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 
-    const mutationResponse = await addUser({
-      variables: {
-        email: formState.email,
-        username: formState.username,
-        password: formState.password,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    if (formState.password !== formState.password_confirm) {
+      setErrorMessage("Passwords don't match!");
+    } else {
+      setErrorMessage("");
+
+      const mutationResponse = await addUser({
+        variables: {
+          email: formState.email,
+          username: formState.username,
+          password: formState.password,
+        },
+      });
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token);
+    }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    if (!event.target.value.length) {
+      setErrorMessage(`${event.target.name} is required.`);
+    } else {
+      setErrorMessage("");
+
+      const { name, value } = event.target;
+      setFormState({ ...formState, [name]: value });
+    }
   };
 
   return (
     <div className="sign">
-      <h1>SlytherinSocial</h1>
-      <p>SignUp</p>
+      {/* <h1>SlytherinSocial</h1>
+      <p>SignUp</p> */}
       <form onSubmit={formSubmit}>
         <div type="text" className="input-group">
           <div>
-            <i className="fas fa-user"></i>
+            < FaUser/>
           </div>
-          <input placeholder="Username" onChange={handleChange} />
+          <input
+            placeholder="Username"
+            name="username"
+            onChange={handleChange}
+          />
         </div>
         <div type="email" className="input-group">
           <div>
-            <i className="fas fa-envelope"></i>
+            <FaEnvelope/>
           </div>
-          <input placeholder="Email" onChange={handleChange} />
+          <input placeholder="Email" name="email" onChange={handleChange} />
         </div>
         <div className="input-group">
           <div>
-            <i className="fas fa-key"></i>
+            <FaLock/>
           </div>
           <input
             type="password"
             placeholder="Password"
+            name="password"
             onChange={handleChange}
           />
         </div>
         <div className="input-group">
           <div>
-            <i className="fas fa-lock"></i>
+            <FaLock/>
           </div>
           <input
             type="password"
+            name="password_confirm"
             placeholder="Confirm Password"
             onChange={handleChange}
           />
@@ -79,6 +100,11 @@ const Signup = (props) => {
             <div className="thumb"></div>
           </div>
         </div>
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
         <button type="submit">SUBMIT</button>
         <p>
           Already a member? <Link to="/login">Sign In.</Link>

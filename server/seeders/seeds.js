@@ -12,12 +12,18 @@ db.once('open', async () => {
         await User.create(userSeeds);
 
         for(let i = 0; i < postSeeds.length; i++) {
-            const { _id, postAuthor } = await Post.create(postSeeds[i]);
+            // Generate a random number to add a random user as a friend to the current user being seeded
+            const randomUserInt = Math.floor(Math.random() * i);
+            const randomUser = userSeeds[randomUserInt];
+            const test = await User.findOne({username: randomUser.username});
+            console.log(test)
+            const { _id, username } = await Post.create(postSeeds[i]);
             const user = await User.findOneAndUpdate(
-                { username: postAuthor },
+                { username: username },
                 {
                     $addToSet: {
-                        posts: _id
+                        posts: _id,
+                        friends: test._id
                     }
                 }
             );

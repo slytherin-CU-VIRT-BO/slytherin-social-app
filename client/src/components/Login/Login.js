@@ -4,16 +4,22 @@ import { Link } from "react-router-dom";
 import { LOGIN } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import "./Login.css";
+import { FaUser, FaKey } from 'react-icons/fa';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({
     username: "",
     password: "",
   });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [login, { error }] = useMutation(LOGIN);
 
-  const formSubmit = async (e) => {
-    e.preventDefault();
+  const formSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
     try {
       const mutationResponse = await login({
         variables: {
@@ -28,31 +34,39 @@ const Login = (props) => {
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    if (!event.target.value.length) {
+      setErrorMessage(`${event.target.name} is required.`);
+    } else {
+      setErrorMessage("");
+
+      const { name, value } = event.target;
+      setFormState({ ...formState, [name]: value });
+    }
   };
 
   return (
     <div className="sign">
-      <h1>SlytherinSocial</h1>
-      <p>Login</p>
+      {/* <h1>SlytherinSocial</h1>
+      <p>Login</p> */}
       <form onSubmit={formSubmit}>
         <div type="text" className="input-group">
           <div>
-            <i className="fas fa-user"></i>
+            <FaUser/>
           </div>
-          <input placeholder="Username" onChange={handleChange} />
+          <input
+            placeholder="Username"
+            name="username"
+            onChange={handleChange}
+          />
         </div>
         <div className="input-group">
           <div>
-            <i className="fas fa-key"></i>
+            <FaKey/>
           </div>
           <input
             type="password"
+            name="password"
             placeholder="Password"
             onChange={handleChange}
           />
@@ -71,6 +85,11 @@ const Login = (props) => {
             </p>
           </div>
         ) : null}
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
         <button type="submit">LOGIN</button>
         <p>
           Not a member? <Link to="/signup">Sign Up!</Link>
