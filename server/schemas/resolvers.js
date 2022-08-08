@@ -113,6 +113,16 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    // If a user owns a post, they can delete it
+    deletePost: async (parent, { postId }, context) => {
+      if(context.user) {
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $pull: { posts: postId} },
+          { new: true}
+        )
+      }
+    },
     // Adds a comment to a post by taking the post's id
     addComment: async (parent, { postId, commentBody }, context) => {
       // Check the user is logged in
