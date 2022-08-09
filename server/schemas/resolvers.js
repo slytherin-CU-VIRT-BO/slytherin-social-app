@@ -116,7 +116,7 @@ const resolvers = {
     // If a user owns a post, they can delete it
     deletePost: async (parent, { postId }, context) => {
       if(context.user) {
-        await User.findByIdAndUpdate(
+        return await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $pull: { posts: postId} },
           { new: true}
